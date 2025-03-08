@@ -1375,10 +1375,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1
+    value: 100
   threshold:
     overrideState: 1
-    value: 0.25
+    value: 100
   softKnee:
     overrideState: 0
     value: 0.004
@@ -1392,8 +1392,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   color:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 0.8018868, g: 0.71554655, b: 0, a: 1}
   fastMode:
     overrideState: 0
     value: 0
@@ -1444,6 +1444,9 @@ MonoBehaviour:
   thicknessModifier:
     overrideState: 1
     value: 2.46
+  zBias:
+    overrideState: 0
+    value: 0.0001
   directLightingStrength:
     overrideState: 0
     value: 0
