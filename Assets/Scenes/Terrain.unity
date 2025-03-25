@@ -16841,6 +16841,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &1065730300 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6935417351677981081, guid: d324de115c4dff845bee7b7f166883c4, type: 3}
+  m_PrefabInstance: {fileID: 677392234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1066419277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25990,8 +25995,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a0628e8f5444021ac9c54aede105e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 0}
-  localMoveOffset: {x: 0, y: 2, z: 0}
+  door: {fileID: 1065730300}
+  localMoveOffset: {x: 0, y: 10, z: 0}
   moveSpeed: 2
   doorAudio: {fileID: 630700973}
   openSound: {fileID: 8300000, guid: 4f9b76d2ea2994d62b024398b343ea63, type: 3}
@@ -29345,15 +29350,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 363.79
+      value: 359.71
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.186
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 503.42
+      value: 496.23
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
