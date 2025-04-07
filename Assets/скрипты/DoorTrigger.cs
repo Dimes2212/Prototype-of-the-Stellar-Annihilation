@@ -3,9 +3,9 @@ using System.Collections;
 
 public class DoorTrigger : MonoBehaviour
 {
-    public Transform door; // Ссылка на объект двери
-    public Vector3 moveOffset = new Vector3(0, 0, -1f); // Насколько сместить дверь внутрь стены
-    public float moveSpeed = 2f; // Скорость движения двери
+    public Transform door; 
+    public Vector3 moveOffset = new Vector3(0, 0, -1f); 
+    public float moveSpeed = 2f; 
     public AudioSource doorAudio;
     public AudioClip openSound; 
     public AudioClip closeSound;
@@ -66,6 +66,6 @@ public class DoorTrigger : MonoBehaviour
             yield return null;
         }
 
-        door.position = target; // Финальное положение
+        door.position = target; 
     }
 }
