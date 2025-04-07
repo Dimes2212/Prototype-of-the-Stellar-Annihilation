@@ -3,9 +3,9 @@ using System.Collections;
 
 public class DoorTriggerLocal : MonoBehaviour
 {
-    public Transform door; // Ссылка на объект двери
-    public Vector3 localMoveOffset = new Vector3(0, 0, -1f); // Смещение в локальных координатах
-    public float moveSpeed = 2f; // Скорость движения двери
+    public Transform door; 
+    public Vector3 localMoveOffset = new Vector3(0, 0, -1f); 
+    public float moveSpeed = 2f; 
     public AudioSource doorAudio;
     public AudioClip openSound;
     public AudioClip closeSound;
@@ -20,7 +20,7 @@ public class DoorTriggerLocal : MonoBehaviour
         if (door != null)
         {
             initialPosition = door.position;
-            // Преобразуем локальное смещение в мировые координаты
+            
             targetPosition = initialPosition + door.TransformDirection(localMoveOffset);
         }
     }
@@ -67,6 +67,6 @@ public class DoorTriggerLocal : MonoBehaviour
             yield return null;
         }
 
-        door.position = target; // Финальное положение
+        door.position = target; 
     }
 }
