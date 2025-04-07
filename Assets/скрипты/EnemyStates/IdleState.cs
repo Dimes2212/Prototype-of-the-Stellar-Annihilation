@@ -12,6 +12,10 @@ public class IdleState : BaseState
     }
     public override void UpdateState(EnemyStateManager manager)
     {
-        if (manager.DistanceToTarget() < 10) manager.SwitchState(manager.agroState);
+        if (manager.DistanceToTarget() < manager.agroDistance)
+        {
+            manager.SwitchState(manager.agroState);
+            return;
+        }
     }
 }

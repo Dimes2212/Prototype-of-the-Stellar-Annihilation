@@ -5,6 +5,11 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] UnityEngine.AI.NavMeshAgent navMeshAgent;
     Transform target;
     [SerializeField] Transform player;
+    [SerializeField] public float walkSpeed;
+    [SerializeField] public float agroDistance;
+    [SerializeField] public float attackDistance;
+
+
 
     BaseState currentState;
     public IdleState idleState = new IdleState();
