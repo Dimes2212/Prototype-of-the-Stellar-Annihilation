@@ -6,10 +6,12 @@ public class AgroState : BaseState
     {
         Debug.Log("Entering Agro");
         manager.SetSpeed(manager.walkSpeed);
+        manager.animator.SetBool("IsAgro", true);
+        manager.animator.SetBool("IsAttack" , false);
     }
     public override void ExitState(EnemyStateManager manager)
     {
-
+        
     }
     public override void UpdateState(EnemyStateManager manager)
     {
