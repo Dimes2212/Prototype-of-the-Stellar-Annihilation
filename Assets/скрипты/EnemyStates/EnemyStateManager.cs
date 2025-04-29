@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
+    [SerializeField] public Collider damageCollider;
     [SerializeField] UnityEngine.AI.NavMeshAgent navMeshAgent;
     Transform target;
+    [SerializeField] public Animator animator; 
     [SerializeField] Transform player;
     [SerializeField] public float walkSpeed;
     [SerializeField] public float agroDistance;
@@ -42,11 +44,37 @@ public class EnemyStateManager : MonoBehaviour
         navMeshAgent.speed = newSpeed;
     }
     public void SetDestination(Transform newDestination)
-    {
+    { 
         target = newDestination;
     }
     public float DistanceToTarget()
     {
         return (transform.position - target.transform.position).magnitude;
+    }
+    public void CheckConditions()
+    {
+        if (currentState != attackState)
+        {
+            if (DistanceToTarget() >= attackDistance)
+            {
+                
+                
+                SwitchState(agroState);
+                
+
+                return;
+            }
+        }
+    }
+    void OnOffDamager(int isOff)
+    {
+        if (isOff == 0)
+        {
+            damageCollider.enabled = false;
+        }
+        else
+        {
+            damageCollider.enabled = true;
+        }
     }
 }
