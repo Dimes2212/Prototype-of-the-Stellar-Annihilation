@@ -6,7 +6,10 @@ public class GoToTarget : MonoBehaviour
     [SerializeField] Transform player;
     private void Update()
     {
-        navMeshAgent.destination = player.position;
+        if (navMeshAgent != null && player != null)
+        {
+            navMeshAgent.destination = player.position;
+        }
     }
 
 
