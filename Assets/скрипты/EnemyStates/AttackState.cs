@@ -15,11 +15,12 @@ public class AttackState : BaseState
     public override void UpdateState(EnemyStateManager manager)
     {
         Debug.Log("Атакую");
-        //if (manager.DistanceToTarget() >= manager.attackDistance)
-        //{
-        //    manager.SwitchState(manager.agroState);
-        //    return;
+        if (manager.DistanceToTarget() >= manager.attackDistance)
+        {
+            manager.SwitchState(manager.agroState);
+            return;
 
-        //}   
+        }
+        
     }
 }

@@ -1,0 +1,4 @@
+repository "Prototype of the Stellar Annihilation/Prototype of the Stellar Annihilation@10171475346753@cloud"
+  path "/"
+    br "/main"
+    co "/main"

@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class GoToTarget : MonoBehaviour
 {
-    [SerializeField] UnityEngine.AI.NavMeshAgent navMeshAgent;
-    [SerializeField] Transform player;
+    [SerializeField] private UnityEngine.AI.NavMeshAgent navMeshAgent;
+    [SerializeField] private Transform player;
+
     private void Update()
     {
-        navMeshAgent.destination = player.position;
+        if (navMeshAgent != null && player != null)
+        {
+            navMeshAgent.destination = player.position;
+        }
     }
 
 
