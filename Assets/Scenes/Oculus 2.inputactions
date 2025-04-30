@@ -1,0 +1,80 @@
+{
+    "name": "Oculus 2",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "19e7c901-c396-4ece-aaa9-72ea62d72c3b",
+            "actions": [],
+            "bindings": []
+        },
+        {
+            "name": "GamePlay",
+            "id": "5e04fcc6-df1e-49af-bc74-7b549594d5ec",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "655ef792-9a38-4d02-b65f-5fbdfc7d09f1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "4ddabf7f-d177-4b3b-8feb-bab5e9fd0ca9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ring",
+                    "type": "Button",
+                    "id": "0393f2b5-5c1c-4a6b-bbd6-239dc3dfdda8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "38e40fce-eb9a-44ee-853c-9e0d09fe857b",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d567516-faec-49b5-ade7-f869cf8cbe9d",
+                    "path": "<OculusTouchController>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2fa5fd83-05d7-4796-beea-58d5a1b7e0f7",
+                    "path": "<OculusTouchController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ring",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

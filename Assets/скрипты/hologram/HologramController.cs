@@ -1,33 +1,30 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class HologramController : MonoBehaviour
 {
-    public CanvasGroup hologramCanvasGroup;
-    public InputActionProperty showHologramAction; // Сюда закинем экшен кнопки
-    public float fadeSpeed = 5f;
+    [Header("Hologram Settings")]
+    public GameObject hologramUI;
+    public InputAction toggleHologramAction;
 
-    private bool isVisible = false;
+    private bool isActive = false;
 
-    private void Update()
+    private void OnEnable()
     {
-        if (showHologramAction.action.WasPressedThisFrame())
-        {
-            ToggleHologram();
-        }
-
-        // Плавное появление/исчезновение
-        float targetAlpha = isVisible ? 1f : 0f;
-        hologramCanvasGroup.alpha = Mathf.Lerp(hologramCanvasGroup.alpha, targetAlpha, Time.deltaTime * fadeSpeed);
-
-        // Блокируем клики если голограмма невидима
-        hologramCanvasGroup.blocksRaycasts = isVisible;
-        hologramCanvasGroup.interactable = isVisible;
+        toggleHologramAction.Enable();
+        toggleHologramAction.performed += Toggle;
     }
 
-    private void ToggleHologram()
+    private void OnDisable()
     {
-        isVisible = !isVisible;
+        toggleHologramAction.performed -= Toggle;
+        toggleHologramAction.Disable();
+    }
+
+    private void Toggle(InputAction.CallbackContext context)
+    {
+        isActive = !isActive;
+        if (hologramUI != null)
+            hologramUI.SetActive(isActive);
     }
 }
