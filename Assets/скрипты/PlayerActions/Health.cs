@@ -49,7 +49,7 @@ public class Health : MonoBehaviour
     {
         onDeath?.Invoke();
         Debug.Log($"{gameObject.name} погиб.");
-        // Здесь можно отключить объект, анимации или смерть
+        Destroy(gameObject); // Удаление объекта из сцены
     }
 
     void UpdateHologram()
