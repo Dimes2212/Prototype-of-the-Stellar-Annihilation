@@ -15,6 +15,5 @@ public class AttackState : BaseState
     public override void UpdateState(EnemyStateManager manager)
     {
         Debug.Log("Атакую");
-        
     }
 }
