@@ -2,26 +2,11 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    public float damageAmount = 10f;              // Сколько урона наносить
-    public string targetTag = "Player";           // Кого атакуем
-    public bool canDealDamage = true;             // Можно ли наносить урон прямо сейчас
-    public float damageCooldown = 1f;             // Задержка между ударами
+    public float damageAmount = 10f;
+    public string targetTag = "Player";
+    public float damageCooldown = 1f;
 
-    private float damageTimer = 0f;
-
-    void Update()
-    {
-        // Считаем кулдаун
-        if (!canDealDamage)
-        {
-            damageTimer += Time.deltaTime;
-            if (damageTimer >= damageCooldown)
-            {
-                canDealDamage = true;
-                damageTimer = 0f;
-            }
-        }
-    }
+    private bool canDealDamage = true;
 
     void OnTriggerEnter(Collider other)
     {
@@ -32,7 +17,14 @@ public class DamageDealer : MonoBehaviour
         if (health != null)
         {
             health.TakeDamage(damageAmount);
-            canDealDamage = false; // Не спамим уроном каждый кадр
+            StartCoroutine(DamageCooldown());
         }
+    }
+
+    System.Collections.IEnumerator DamageCooldown()
+    {
+        canDealDamage = false;
+        yield return new WaitForSeconds(damageCooldown);
+        canDealDamage = true;
     }
 }
