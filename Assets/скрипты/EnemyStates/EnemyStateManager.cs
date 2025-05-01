@@ -53,7 +53,7 @@ public class EnemyStateManager : MonoBehaviour
     }
     public void CheckConditions()
     {
-        if (currentState != attackState)
+        if (currentState == attackState)
         {
             if (DistanceToTarget() >= attackDistance)
             {

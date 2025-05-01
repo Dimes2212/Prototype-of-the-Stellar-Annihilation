@@ -5,7 +5,7 @@ public class GrabParent : MonoBehaviour
 {
     public void OnGrab(SelectEnterEventArgs args)
     {
-        args.interactableObject.transform.SetParent(args.interactorObject.transform);
+        args.interactableObject.transform.SetParent(args.interactableObject.transform);
     }
     public void OnUngrab(SelectExitEventArgs args)
     {

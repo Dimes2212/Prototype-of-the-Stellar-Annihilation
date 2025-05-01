@@ -55,24 +55,24 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.27941468
+      - time: 0.1056319
         functionName: OnOffDamager
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 3f0e929a36609bf44a1e2d8f8f25ca58, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.49621686
+      - time: 0.3404116
         functionName: OnOffDamager
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 3f0e929a36609bf44a1e2d8f8f25ca58, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7485095
+      - time: 0.5597455
         functionName: CheckConditions
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 6e899e760912c6645a12d1c4953bc42a, type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: 3f0e929a36609bf44a1e2d8f8f25ca58, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
