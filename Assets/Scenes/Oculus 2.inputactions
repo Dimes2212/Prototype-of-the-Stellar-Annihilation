@@ -2,12 +2,6 @@
     "name": "Oculus 2",
     "maps": [
         {
-            "name": "New action map",
-            "id": "19e7c901-c396-4ece-aaa9-72ea62d72c3b",
-            "actions": [],
-            "bindings": []
-        },
-        {
             "name": "GamePlay",
             "id": "5e04fcc6-df1e-49af-bc74-7b549594d5ec",
             "actions": [
