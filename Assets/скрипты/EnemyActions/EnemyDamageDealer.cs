@@ -1,17 +1,16 @@
 using UnityEngine;
 
-public class DamageDealer : MonoBehaviour
+public class EnemyDamageDealer : MonoBehaviour
 {
-    public float damageAmount = 10f;
+    public float damageAmount = 15f;
     public string targetTag = "Player";
     public float damageCooldown = 1f;
 
     private bool canDealDamage = true;
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (!canDealDamage) return;
-        if (!other.CompareTag(targetTag)) return;
+        if (!canDealDamage || !other.CompareTag(targetTag)) return;
 
         Health health = other.GetComponent<Health>();
         if (health != null)
@@ -21,7 +20,7 @@ public class DamageDealer : MonoBehaviour
         }
     }
 
-    System.Collections.IEnumerator DamageCooldown()
+    private System.Collections.IEnumerator DamageCooldown()
     {
         canDealDamage = false;
         yield return new WaitForSeconds(damageCooldown);
