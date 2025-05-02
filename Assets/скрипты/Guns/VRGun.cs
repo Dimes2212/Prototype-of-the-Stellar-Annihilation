@@ -1,29 +1,38 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
+
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class VRGun : MonoBehaviour
 {
     [Header("Gun Settings")]
-    public int maxAmmo = 10;  // Максимальное количество патронов
-    public float fireRate = 0.3f;  // Задержка между выстрелами
-    public Transform firePoint;  // Точка, из которой будет вылетать пуля
-    public GameObject bulletPrefab;  // Префаб пули
+    public int maxAmmo = 10;
+    public float fireRate = 0.3f;
+    public Transform firePoint;
+    public GameObject bulletPrefab;
 
     [Header("FX")]
-    public ParticleSystem muzzleFlash;  // Вспышка на дуге
-    public AudioSource shotSound;  // Звук выстрела
+    public ParticleSystem muzzleFlash;
+    public AudioSource shotSound;
 
     [Header("Input")]
-    public InputActionProperty shootAction;  // Действие для стрельбы
-    public InputActionProperty reloadAction;  // Действие для перезарядки
+    public InputActionProperty shootAction;
+    public InputActionProperty reloadAction;
 
-    private int currentAmmo;  // Текущее количество патронов
-    private float nextFireTime = 0f;  // Время следующего выстрела
+    private int currentAmmo;
+    private float nextFireTime = 0f;
+    private XRGrabInteractable grabInteractable;
 
     void Start()
     {
         currentAmmo = maxAmmo;
+
+        // Автоматический поиск XRGrabInteractable, если не задан вручную
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        if (grabInteractable == null)
+        {
+            Debug.LogWarning("XRGrabInteractable not found on gun!");
+        }
     }
 
     void OnEnable()
@@ -40,21 +49,17 @@ public class VRGun : MonoBehaviour
 
     void Update()
     {
-        // Проверка нажатия кнопки стрельбы
-        if (shootAction.action.WasPressedThisFrame())
-        {
-            Debug.Log("Shoot input detected");
+        // Стрельба только если пистолет в руках
+        if (grabInteractable != null && !grabInteractable.isSelected)
+            return;
 
-            if (Time.time >= nextFireTime)
-            {
-                Shoot();
-            }
+        if (shootAction.action.WasPressedThisFrame() && Time.time >= nextFireTime)
+        {
+            Shoot();
         }
 
-        // Проверка нажатия кнопки перезарядки
         if (reloadAction.action.WasPressedThisFrame())
         {
-            Debug.Log("Reload input detected");
             Reload();
         }
     }
@@ -65,28 +70,26 @@ public class VRGun : MonoBehaviour
 
         nextFireTime = Time.time + fireRate;
 
-        // Инстанцируем пулю на точке firePoint с её ориентацией
+        // Создаём пулю
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
-        // Проверяем, есть ли Rigidbody у пули для применения физики
+        // Устанавливаем её движение по оси Z (forward)
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         if (bulletRb != null)
         {
-            bulletRb.linearVelocity = firePoint.forward * 20f;  // Устанавливаем скорость пули
+            bulletRb.linearVelocity = firePoint.forward * 20f;
         }
 
-        // Включаем визуальные и звуковые эффекты
+        // Эффекты
         if (muzzleFlash) muzzleFlash.Play();
         if (shotSound) shotSound.Play();
 
-        // Уменьшаем количество патронов
         currentAmmo--;
         Debug.Log("Ammo: " + currentAmmo);
     }
 
     void Reload()
     {
-        // Перезаряжаем пистолет
         currentAmmo = maxAmmo;
         Debug.Log("Reloaded!");
     }
