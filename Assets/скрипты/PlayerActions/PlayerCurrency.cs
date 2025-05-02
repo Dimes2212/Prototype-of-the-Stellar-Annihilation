@@ -9,7 +9,8 @@ public class PlayerCurrency : MonoBehaviour
     [Header("UI (голограмма)")]
     public TextMeshProUGUI currencyText; // Привяжи сюда твой голографический UI
 
-    private int currentCurrency;
+    [HideInInspector]
+    public int currentCurrency;
 
     void Awake()
     {
@@ -22,6 +23,22 @@ public class PlayerCurrency : MonoBehaviour
         currentCurrency += amount;
         UpdateUI();
         Debug.Log($"PlayerCurrency: +{amount}, total = {currentCurrency}");
+    }
+
+    public bool SpendMoney(int amount)
+    {
+        if (currentCurrency >= amount)
+        {
+            currentCurrency -= amount;
+            UpdateUI();
+            Debug.Log($"PlayerCurrency: -{amount}, осталось = {currentCurrency}");
+            return true;
+        }
+        else
+        {
+            Debug.LogWarning("Не хватает денег для списания!");
+            return false;
+        }
     }
 
     public int GetCurrency() => currentCurrency;
