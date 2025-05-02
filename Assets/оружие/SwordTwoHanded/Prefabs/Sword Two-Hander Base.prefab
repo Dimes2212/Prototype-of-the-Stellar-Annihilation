@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4961938836959388268}
   m_Layer: 0
   m_Name: Sword Two-Hander Base
-  m_TagString: TwoHandSword
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

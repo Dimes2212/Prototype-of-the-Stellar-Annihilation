@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Weapon
   - TwoHandSword
+  - ElectricitySword
   layers:
   - Default
   - TransparentFX
