@@ -9,6 +9,11 @@ TagManager:
   - Weapon
   - TwoHandSword
   - ElectricitySword
+  - Axe
+  - SMG
+  - PP
+  - ShotGun
+  - Dagger
   layers:
   - Default
   - TransparentFX
