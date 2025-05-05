@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class HologramController : MonoBehaviour
 {
-    [Header("Hologram Settings")]
+    
     public GameObject hologramUI;
     public InputAction toggleHologramAction;
 
@@ -12,12 +12,12 @@ public class HologramController : MonoBehaviour
     private void OnEnable()
     {
         toggleHologramAction.Enable();
-        toggleHologramAction.performed += Toggle;
+        toggleHologramAction.canceled += Toggle; // <-- изменено с performed на canceled
     }
 
     private void OnDisable()
     {
-        toggleHologramAction.performed -= Toggle;
+        toggleHologramAction.canceled -= Toggle;
         toggleHologramAction.Disable();
     }
 

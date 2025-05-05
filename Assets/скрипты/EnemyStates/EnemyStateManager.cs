@@ -1,80 +1,76 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyStateManager : MonoBehaviour
 {
     [SerializeField] public Collider damageCollider;
-    [SerializeField] UnityEngine.AI.NavMeshAgent navMeshAgent;
-    Transform target;
-    [SerializeField] public Animator animator; 
-    [SerializeField] Transform player;
+    [SerializeField] public NavMeshAgent navMeshAgent;
+    [SerializeField] public Animator animator;
+    [SerializeField] public Transform player;
     [SerializeField] public float walkSpeed;
     [SerializeField] public float agroDistance;
     [SerializeField] public float attackDistance;
 
+    
+    [SerializeField] public Transform[] patrolPoints;
+    [HideInInspector] public int currentPatrolIndex = 0;
 
+    private Transform target;
 
     BaseState currentState;
     public IdleState idleState = new IdleState();
     public AgroState agroState = new AgroState();
     public AttackState attackState = new AttackState();
-
-    public void SwitchState(BaseState newState)
-    {
-        if (currentState != null)
-        {
-            currentState.ExitState(this);
-        }
-        currentState = newState;
-        currentState.EnterState(this);
-    }
+    public PatrolState patrolState = new PatrolState();
 
     private void Start()
     {
-        SwitchState(idleState);
+        SwitchState(patrolState); // Начинаем с патруля
     }
 
     private void Update()
     {
-        SetDestination(player);
-        navMeshAgent.destination = target.position;
-        currentState.UpdateState(this);
+        if (target != null)
+            navMeshAgent.destination = target.position;
+
+        currentState?.UpdateState(this);
     }
+
+    public void SwitchState(BaseState newState)
+    {
+        currentState?.ExitState(this);
+        currentState = newState;
+        currentState.EnterState(this);
+    }
+
     public void SetSpeed(float newSpeed)
     {
         navMeshAgent.speed = newSpeed;
     }
+
     public void SetDestination(Transform newDestination)
-    { 
+    {
         target = newDestination;
     }
+
     public float DistanceToTarget()
     {
-        return (transform.position - target.transform.position).magnitude;
+        if (target == null) return Mathf.Infinity;
+        return Vector3.Distance(transform.position, target.position);
     }
+
     public void CheckConditions()
     {
-        if (currentState == attackState)
+        if (currentState == attackState && DistanceToTarget() >= attackDistance)
         {
-            if (DistanceToTarget() >= attackDistance)
-            {
-                
-                
-                SwitchState(agroState);
-                
-
-                return;
-            }
+            SwitchState(agroState);
         }
     }
+
     void OnOffDamager(int isOff)
     {
-        if (isOff == 0)
-        {
-            damageCollider.enabled = false;
-        }
-        else
-        {
-            damageCollider.enabled = true;
-        }
+        damageCollider.enabled = isOff != 0;
     }
+
+    public Transform GetPlayer() => player;
 }
