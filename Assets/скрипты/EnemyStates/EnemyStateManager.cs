@@ -11,7 +11,6 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] public float agroDistance;
     [SerializeField] public float attackDistance;
 
-    
     [SerializeField] public Transform[] patrolPoints;
     [HideInInspector] public int currentPatrolIndex = 0;
 
@@ -25,14 +24,11 @@ public class EnemyStateManager : MonoBehaviour
 
     private void Start()
     {
-        SwitchState(patrolState); // Начинаем с патруля
+        SwitchState(patrolState);
     }
 
     private void Update()
     {
-        if (target != null)
-            navMeshAgent.destination = target.position;
-
         currentState?.UpdateState(this);
     }
 
@@ -51,25 +47,16 @@ public class EnemyStateManager : MonoBehaviour
     public void SetDestination(Transform newDestination)
     {
         target = newDestination;
+        if (navMeshAgent != null && target != null)
+        {
+            navMeshAgent.destination = target.position;
+        }
     }
 
     public float DistanceToTarget()
     {
         if (target == null) return Mathf.Infinity;
         return Vector3.Distance(transform.position, target.position);
-    }
-
-    public void CheckConditions()
-    {
-        if (currentState == attackState && DistanceToTarget() >= attackDistance)
-        {
-            SwitchState(agroState);
-        }
-    }
-
-    void OnOffDamager(int isOff)
-    {
-        damageCollider.enabled = isOff != 0;
     }
 
     public Transform GetPlayer() => player;

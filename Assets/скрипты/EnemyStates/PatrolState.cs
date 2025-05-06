@@ -6,37 +6,36 @@ public class PatrolState : BaseState
     {
         Debug.Log("Entering Patrol");
         manager.SetSpeed(manager.walkSpeed);
+        manager.animator.SetBool("IsIdle", false);
+        manager.animator.SetBool("IsPatrolling", true);
         manager.animator.SetBool("IsAgro", false);
         manager.animator.SetBool("IsAttack", false);
 
         if (manager.patrolPoints.Length == 0)
         {
-            Debug.LogWarning("Нет точек патруля у врага.");
+            Debug.LogWarning("РќРµС‚ С‚РѕС‡РµРє РїР°С‚СЂСѓР»СЏ.");
             return;
         }
 
-        // Начинаем с первой точки
-        manager.currentPatrolIndex = 0;
-        manager.SetDestination(manager.patrolPoints[manager.currentPatrolIndex]);
+        manager.SetDestination(manager.patrolPoints[manager.currentPatrolIndex]);  // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј С†РµР»СЊ РЅР° С‚РѕС‡РєСѓ РїР°С‚СЂСѓР»СЏ
     }
 
     public override void ExitState(EnemyStateManager manager)
     {
-        // Здесь можно выключить анимацию патруля, если есть
     }
 
     public override void UpdateState(EnemyStateManager manager)
     {
         float distanceToPlayer = Vector3.Distance(manager.transform.position, manager.GetPlayer().position);
 
-        // Если игрок в зоне агро — переключаемся в агро
+        // РџРµСЂРµС…РѕРґ РІ Р°РіСЂРµСЃСЃРёСЋ, РµСЃР»Рё РёРіСЂРѕРє РІ РїСЂРµРґРµР»Р°С… Р°РіСЂРѕ-РґРёСЃС‚Р°РЅС†РёРё
         if (distanceToPlayer < manager.agroDistance)
         {
             manager.SwitchState(manager.agroState);
             return;
         }
 
-        // Если достигнута текущая точка патруля — двигаемся к следующей
+        // Р•СЃР»Рё С‚РѕС‡РєР° РїР°С‚СЂСѓР»СЏ РґРѕСЃС‚РёРіРЅСѓС‚Р°, РїРµСЂРµРєР»СЋС‡Р°РµРјСЃСЏ РЅР° СЃР»РµРґСѓСЋС‰СѓСЋ
         if (!manager.navMeshAgent.pathPending && manager.navMeshAgent.remainingDistance < 0.5f)
         {
             manager.currentPatrolIndex = (manager.currentPatrolIndex + 1) % manager.patrolPoints.Length;
