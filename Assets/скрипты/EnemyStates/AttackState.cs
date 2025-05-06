@@ -7,7 +7,7 @@ public class AttackState : BaseState
         manager.SetSpeed(0);
         manager.animator.SetBool("IsIdle", false);
         manager.animator.SetBool("IsPatrolling", false);
-        manager.animator.SetBool("IsAgro", true);
+        manager.animator.SetBool("IsAgro", false);
         manager.animator.SetBool("IsAttack", true);
     }
 
@@ -20,11 +20,6 @@ public class AttackState : BaseState
         float distance = manager.DistanceToTarget();
 
         
-        if (distance > manager.attackDistance)
-        {
-            manager.SwitchState(manager.agroState);
-            return;
-        }
 
         
     }

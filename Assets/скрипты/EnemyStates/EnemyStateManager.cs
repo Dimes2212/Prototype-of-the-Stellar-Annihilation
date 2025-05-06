@@ -68,6 +68,7 @@ public class EnemyStateManager : MonoBehaviour
         if (currentState == attackState && DistanceToTarget() >= attackDistance)
         {
             SwitchState(agroState);
+            return;
         }
     }
 
