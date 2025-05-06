@@ -13,7 +13,7 @@ public class AgroState : BaseState
 
 
 
-        manager.SetDestination(manager.GetPlayer());  // Цель - игрок
+        manager.SetDestination(manager.GetPlayer());  
     }
 
     public override void ExitState(EnemyStateManager manager)
@@ -24,21 +24,21 @@ public class AgroState : BaseState
     {
         float distanceToPlayer = manager.DistanceToTarget();
 
-        // Переход в патруль, если игрок далеко
+        
         if (distanceToPlayer >= manager.agroDistance)
         {
             manager.SwitchState(manager.patrolState);
             return;
         }
 
-        // Переход в атаку, если игрок слишком близко
+        
         if (distanceToPlayer < manager.attackDistance)
         {
             manager.SwitchState(manager.attackState);
             return;
         }
 
-        // Если дистанция меняется в агрессии, продолжаем следовать за игроком
+        
         manager.SetDestination(manager.GetPlayer());
     }
 }

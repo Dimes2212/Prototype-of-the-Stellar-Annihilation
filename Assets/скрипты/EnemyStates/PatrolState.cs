@@ -17,7 +17,7 @@ public class PatrolState : BaseState
             return;
         }
 
-        manager.SetDestination(manager.patrolPoints[manager.currentPatrolIndex]);  // Устанавливаем цель на точку патруля
+        manager.SetDestination(manager.patrolPoints[manager.currentPatrolIndex]);  
     }
 
     public override void ExitState(EnemyStateManager manager)
@@ -28,14 +28,14 @@ public class PatrolState : BaseState
     {
         float distanceToPlayer = Vector3.Distance(manager.transform.position, manager.GetPlayer().position);
 
-        // Переход в агрессию, если игрок в пределах агро-дистанции
+        
         if (distanceToPlayer < manager.agroDistance)
         {
             manager.SwitchState(manager.agroState);
             return;
         }
 
-        // Если точка патруля достигнута, переключаемся на следующую
+        
         if (!manager.navMeshAgent.pathPending && manager.navMeshAgent.remainingDistance < 0.5f)
         {
             manager.currentPatrolIndex = (manager.currentPatrolIndex + 1) % manager.patrolPoints.Length;
