@@ -14,20 +14,20 @@ public class Health : MonoBehaviour
 
     public int rewardOnDeath = 0;
 
-    // Ссылка на Animator для врага
+    
     private Animator animator;
 
-    // Параметр для анимации смерти
+    
     private static readonly int IsDead = Animator.StringToHash("isDead");
 
-    // Ссылка на EnemyStateManager
+    
     private EnemyStateManager enemyStateManager;
 
     void Awake()
     {
         currentHealth = maxHealth;
-        animator = GetComponent<Animator>(); // Получаем Animator компонента
-        enemyStateManager = GetComponent<EnemyStateManager>(); // Получаем ссылку на EnemyStateManager
+        animator = GetComponent<Animator>(); 
+        enemyStateManager = GetComponent<EnemyStateManager>(); 
         UpdateHologram();
     }
 

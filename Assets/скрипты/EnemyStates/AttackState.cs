@@ -19,13 +19,13 @@ public class AttackState : BaseState
     {
         float distance = manager.DistanceToTarget();
 
-        // Если игрок слишком далеко, переключаемся на агрессию
+        
         if (distance > manager.attackDistance)
         {
             manager.SwitchState(manager.agroState);
             return;
         }
 
-        // Здесь можно добавить дополнительную логику для анимации атаки и т.д.
+        
     }
 }
