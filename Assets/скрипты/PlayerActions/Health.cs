@@ -4,23 +4,30 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
-    
     public float maxHealth = 100f;
     private float currentHealth;
 
-    
     public UnityEvent onDamage;
     public UnityEvent onDeath;
 
-    
     public TextMeshProUGUI hologramText;
 
-    
     public int rewardOnDeath = 0;
+
+    // Ссылка на Animator для врага
+    private Animator animator;
+
+    // Параметр для анимации смерти
+    private static readonly int IsDead = Animator.StringToHash("isDead");
+
+    // Ссылка на EnemyStateManager
+    private EnemyStateManager enemyStateManager;
 
     void Awake()
     {
         currentHealth = maxHealth;
+        animator = GetComponent<Animator>(); // Получаем Animator компонента
+        enemyStateManager = GetComponent<EnemyStateManager>(); // Получаем ссылку на EnemyStateManager
         UpdateHologram();
     }
 
@@ -44,9 +51,23 @@ public class Health : MonoBehaviour
 
     void Die()
     {
+        
+        if (animator != null)
+        {
+            animator.SetBool(IsDead, true);  
+        }
 
+        
+        onDeath?.Invoke();
 
-        Destroy(gameObject);
+        
+        if (enemyStateManager != null)
+        {
+            enemyStateManager.Die();  
+        }
+
+        
+        Destroy(gameObject, 5f);  
     }
 
     void UpdateHologram()

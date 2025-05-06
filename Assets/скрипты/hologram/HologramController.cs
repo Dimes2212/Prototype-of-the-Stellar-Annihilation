@@ -12,7 +12,7 @@ public class HologramController : MonoBehaviour
     private void OnEnable()
     {
         toggleHologramAction.Enable();
-        toggleHologramAction.canceled += Toggle; // <-- изменено с performed на canceled
+        toggleHologramAction.canceled += Toggle; 
     }
 
     private void OnDisable()

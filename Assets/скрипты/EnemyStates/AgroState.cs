@@ -11,6 +11,8 @@ public class AgroState : BaseState
         manager.animator.SetBool("IsAgro", true);
         manager.animator.SetBool("IsAttack", false);
 
+
+
         manager.SetDestination(manager.GetPlayer());  // Цель - игрок
     }
 
