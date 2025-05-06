@@ -1,21 +1,34 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class PauseManager : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenuUI;          // Твоё паузное меню (Canvas)
 
-    [Header("Input System")]
-    public InputActionReference pauseAction; // Назначаемая кнопка (например, в VR)
+    [Header("Player")]
+    public GameObject player;               // Твой XR Origin или родитель предметов управления
 
-    [Header("Scene")]
-    public string mainMenuSceneName = "MainMenu";
+    [Header("Input (необязательно)")]
+    public InputActionReference pauseAction; // Можно назначить в инспекторе, но Esc всегда работает
 
     private bool isPaused = false;
 
-    private void OnEnable()
+    void Start()
+    {
+        // Скрываем меню при старте
+        if (pauseMenuUI != null)
+            pauseMenuUI.SetActive(false);
+
+        // Снимаем паузу, включаем время и передвижение
+        isPaused = false;
+        Time.timeScale = 1f;
+        TogglePlayerMovement(true);
+    }
+
+    void OnEnable()
     {
         if (pauseAction != null)
         {
@@ -24,7 +37,7 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
         if (pauseAction != null)
         {
@@ -33,25 +46,16 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    void Update()
     {
-        if (pauseMenuUI != null)
-            pauseMenuUI.SetActive(false);
-
-        Time.timeScale = 1f;
-        isPaused = false;
-    }
-
-    private void Update()
-    {
-        // Дополнительно слушаем клавишу Escape на клавиатуре для тестов
+        // Всегда ловим Escape на клавиатуре
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             TogglePause();
         }
     }
 
-    private void OnPausePressed(InputAction.CallbackContext context)
+    private void OnPausePressed(InputAction.CallbackContext ctx)
     {
         TogglePause();
     }
@@ -64,25 +68,43 @@ public class PauseManager : MonoBehaviour
 
     public void Pause()
     {
+        Debug.Log("== PAUSE ==");
         if (pauseMenuUI != null)
             pauseMenuUI.SetActive(true);
 
         Time.timeScale = 0f;
         isPaused = true;
+        TogglePlayerMovement(false);
     }
 
     public void Resume()
     {
+        Debug.Log("== RESUME ==");
         if (pauseMenuUI != null)
             pauseMenuUI.SetActive(false);
 
         Time.timeScale = 1f;
         isPaused = false;
+        TogglePlayerMovement(true);
     }
 
-    public void LoadMainMenu()
+    private void TogglePlayerMovement(bool state)
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(mainMenuSceneName);
+        if (player == null) return;
+
+        // XR Locomotion
+        var locomotion = player.GetComponent<LocomotionSystem>();
+        if (locomotion) locomotion.enabled = state;
+
+        var continuousMove = player.GetComponent<ContinuousMoveProviderBase>();
+        if (continuousMove) continuousMove.enabled = state;
+
+        // Direct Interactors
+        var direct = player.GetComponentsInChildren<XRDirectInteractor>();
+        foreach (var di in direct) di.enabled = state;
+
+        // Ray Interactors
+        var ray = player.GetComponentsInChildren<XRRayInteractor>();
+        foreach (var ri in ray) ri.enabled = state;
     }
 }
