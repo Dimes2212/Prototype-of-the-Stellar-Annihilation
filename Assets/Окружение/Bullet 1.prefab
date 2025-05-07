@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2850090617002782429}
   - component: {fileID: 5976510311582505476}
   - component: {fileID: 7881721080503803367}
-  - component: {fileID: 1343236185264951259}
   - component: {fileID: 9137942945297762473}
   - component: {fileID: 1388378873821987678}
   - component: {fileID: 3353433924544633051}
@@ -111,20 +110,6 @@ MonoBehaviour:
   m_lineColor: {r: 0, g: 1, b: 1, a: 1}
   m_lineWidth: 20
   m_lightSaberFactor: 0.8
---- !u!114 &1343236185264951259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6975703960318303721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96634dcec366f487c8c8728f5cedef73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
-  lifetime: 5
 --- !u!114 &9137942945297762473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a29e25b4c9cc434987aed98f99f8e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   lifetime: 5
 --- !u!54 &3353433924544633051
 Rigidbody:
