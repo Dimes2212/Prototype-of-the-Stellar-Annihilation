@@ -3378,11 +3378,7 @@ RectTransform:
   m_GameObject: {fileID: 108211995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_LocalPosition: {x: 0, y: 0, z: 0.1191}
-=======
-  m_LocalPosition: {x: 0, y: 0, z: 0.308}
->>>>>>> Stashed changes
 =======
   m_LocalPosition: {x: 0, y: 0, z: 0.308}
 >>>>>>> Stashed changes
@@ -22399,7 +22395,6 @@ Transform:
   m_PrefabInstance: {fileID: 1006332098}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!1001 &1006598492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22489,8 +22484,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1059198274}
   m_SourcePrefab: {fileID: 100100000, guid: 460b09b3999f980448b54c53b41f5873, type: 3}
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 --- !u!1001 &1007342245
@@ -23576,7 +23569,6 @@ Transform:
   m_PrefabInstance: {fileID: 3357595536417536439}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!65 &1059198271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23664,8 +23656,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 --- !u!1 &1062050807
@@ -48760,10 +48750,7 @@ SceneRoots:
   - {fileID: 243699038}
   - {fileID: 632032902}
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 =======
-=======
->>>>>>> Stashed changes
   - {fileID: 1515574879}
   - {fileID: 39075002213187233}
   - {fileID: 4426372477952905076}
@@ -48772,7 +48759,4 @@ SceneRoots:
   - {fileID: 3357595536417536439}
   - {fileID: 3450432051916216061}
   - {fileID: 1499229877}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
 >>>>>>> Stashed changes
