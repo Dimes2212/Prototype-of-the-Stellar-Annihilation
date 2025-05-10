@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class SoundAndDestroy : MonoBehaviour
 {
-    [Header("Sound Settings")]
+    
     public AudioSource targetAudioSource; 
     public AudioClip collisionSound;      
 
-    [Header("Destruction")]
+    
     public float destroyDelay = 0.5f;     
 
     void OnCollisionEnter(Collision collision)

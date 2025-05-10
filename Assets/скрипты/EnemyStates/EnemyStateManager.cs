@@ -64,7 +64,7 @@ public class EnemyStateManager : MonoBehaviour
 
     public void CheckConditions()
     {
-        
+
         if (currentState == attackState && DistanceToTarget() >= attackDistance)
         {
             SwitchState(agroState);
@@ -74,7 +74,7 @@ public class EnemyStateManager : MonoBehaviour
 
     public void Die()
     {
-        
+
         SwitchState(deathState);
         animator.SetBool("isDead", true);
 
@@ -86,4 +86,6 @@ public class EnemyStateManager : MonoBehaviour
 
     public Transform GetPlayer() => player;
 }
+
+
 

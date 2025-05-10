@@ -15,6 +15,7 @@ TagManager:
   - ShotGun
   - Dagger
   - Pause
+  - Door
   layers:
   - Default
   - TransparentFX
