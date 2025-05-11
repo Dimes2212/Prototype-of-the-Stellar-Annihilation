@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DoorIdleState : DoorBaseState
 {
-    private Transform[] attackPoints;
     private float checkInterval = 1f;  // интервал между проверками
     private float checkTimer = 0f;
 
@@ -10,8 +9,12 @@ public class DoorIdleState : DoorBaseState
     {
         Debug.Log("Entering IdleState");
 
-        attackPoints = manager.GetDoorTarget().GetComponentsInChildren<Transform>();
-        attackPoints = System.Array.FindAll(attackPoints, point => point.GetComponent<Collider>() != null);
+        // Убедитесь, что manager не равен null
+        if (manager.GetDoorTarget() == null)
+        {
+            Debug.LogError("Door target is not assigned.");
+            return;
+        }
 
         manager.animator.SetBool("IsIdle", true);  // Анимация ожидания
     }
@@ -32,22 +35,25 @@ public class DoorIdleState : DoorBaseState
 
             if (availablePoint != null)
             {
-                // Если точка найдена, переходим в агрессию
+                Debug.Log("Found available attack point, switching to AgroState.");
                 manager.SwitchState(manager.doorAgroState);
+                manager.SetDestination(availablePoint);  // Назначаем цель для движения
+            }
+            else
+            {
+                Debug.Log("No available attack point found.");
             }
         }
     }
 
     private Transform GetAvailableAttackPoint(SimpleEnemyStateManager manager)
     {
-        foreach (Transform point in attackPoints)
+        foreach (Transform point in manager.GetAttackPoints())
         {
-            // Пропускаем саму дверь и уже занятые точки
-            if (point == null || point.gameObject == manager.GetDoorTarget().gameObject) continue;
-
             AttackPoint attackPoint = point.GetComponent<AttackPoint>();
             if (attackPoint != null && !attackPoint.IsOccupied)
             {
+                Debug.Log("Available attack point found: " + point.name);  // Логируем доступную точку
                 return point;
             }
         }

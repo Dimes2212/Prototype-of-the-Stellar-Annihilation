@@ -3,31 +3,29 @@ using UnityEngine;
 public class DoorAttackState : DoorBaseState
 {
     private Transform doorTarget;
-    private Transform attackPoint;
     private float attackCooldown = 1.5f;
     private float lastAttackTime;
 
     public override void OnEnter(SimpleEnemyStateManager manager)
     {
-        Debug.Log("Entering DoorAttackState");
+        Debug.Log("Entering AttackState");
 
         doorTarget = manager.GetDoorTarget();
-        attackPoint = manager.GetAvailableAttackPoint();
 
-        manager.SetSpeed(0);  // Останавливаемся, когда атакуем
-        manager.animator.SetBool("IsAttack", true);
+        manager.animator.SetBool("IsWalking", false);  // Останавливаем анимацию ходьбы
+        manager.animator.SetBool("IsAttack", true);  // Включаем анимацию атаки
 
         lastAttackTime = Time.time;
     }
 
     public override void OnExit(SimpleEnemyStateManager manager)
     {
-        manager.animator.SetBool("IsAttack", false);
+        manager.animator.SetBool("IsAttack", false);  // Отключаем анимацию атаки при выходе
     }
 
     public override void OnUpdate(SimpleEnemyStateManager manager)
     {
-        if (doorTarget == null || attackPoint == null) return;
+        if (doorTarget == null) return;
 
         if (Time.time - lastAttackTime >= attackCooldown)
         {
@@ -38,9 +36,8 @@ public class DoorAttackState : DoorBaseState
             if (doorHealth != null && !doorHealth.IsDead())
             {
                 doorHealth.TakeDamage(10);  // Параметр 10 — это количество урона
+                Debug.Log("Attacking door at " + doorTarget.position);
             }
-
-            Debug.Log("Attacking door at " + attackPoint.position);
         }
     }
 }
