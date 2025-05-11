@@ -4,23 +4,27 @@ using UnityEngine.AI;
 public class SimpleEnemyStateManager : MonoBehaviour
 {
     public DoorBaseState currentState;
+    public DoorIdleState doorIdleState;
     public DoorAgroState doorAgroState;
     public DoorAttackState doorAttackState;
+    public DoorDeathState doorDeathState;
 
     public Animator animator;
     public NavMeshAgent navMeshAgent;
 
     [SerializeField] private Transform doorTarget;  // Цель - дверь
-    [SerializeField] private float _walkSpeed = 3.5f;
-    [SerializeField] private float _attackDistance = 1.5f;
+    [SerializeField] private Transform[] attackPoints;  // Точки для атаки
 
-    public float walkSpeed { get { return _walkSpeed; } }
-    public float attackDistance { get { return _attackDistance; } }
+    [SerializeField] private float walkSpeed = 3.5f;
+    [SerializeField] private float attackDistance = 1.5f;
+
+    public float WalkSpeed => walkSpeed;
+    public float AttackDistance => attackDistance;
 
     private void Start()
     {
-        // Начинаем с агрессии
-        SwitchState(doorAgroState);
+        // Начинаем с ожидания
+        SwitchState(doorIdleState);
     }
 
     private void Update()
@@ -37,27 +41,33 @@ public class SimpleEnemyStateManager : MonoBehaviour
         currentState.OnEnter(this);
     }
 
-    // Установка скорости движения
     public void SetSpeed(float speed)
     {
         navMeshAgent.speed = speed;
     }
 
-    // Установка цели для навигации
     public void SetDestination(Transform target)
     {
         navMeshAgent.destination = target.position;
     }
 
-    // Получение цели - двери
-    public Transform GetDoorTarget()
+    public Transform GetDoorTarget() => doorTarget;
+
+    public Transform[] GetAttackPoints() => attackPoints;
+
+    public Transform GetAvailableAttackPoint()
     {
-        return doorTarget;
+        // Выбираем ближайшую свободную точку для атаки
+        foreach (var point in attackPoints)
+        {
+            AttackPoint attackPoint = point.GetComponent<AttackPoint>();
+            if (attackPoint != null && !attackPoint.IsOccupied)
+            {
+                return point;
+            }
+        }
+        return null;  // Если все точки заняты, возвращаем null
     }
 
-    // Расстояние до цели
-    public float DistanceToTarget()
-    {
-        return Vector3.Distance(transform.position, doorTarget.position);
-    }
+    public float DistanceToTarget() => Vector3.Distance(transform.position, doorTarget.position);
 }

@@ -1,13 +1,6 @@
-using UnityEngine;
-
-public abstract class DoorBaseState : MonoBehaviour
+public abstract class DoorBaseState
 {
-    // Метод вызывается при входе в состояние
     public abstract void OnEnter(SimpleEnemyStateManager manager);
-
-    // Метод вызывается при выходе из состояния
-    public abstract void OnExit(SimpleEnemyStateManager manager);
-
-    // Метод обновляется каждый кадр
     public abstract void OnUpdate(SimpleEnemyStateManager manager);
+    public abstract void OnExit(SimpleEnemyStateManager manager);
 }

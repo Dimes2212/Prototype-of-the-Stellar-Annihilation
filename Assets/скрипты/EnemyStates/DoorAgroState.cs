@@ -2,36 +2,37 @@ using UnityEngine;
 
 public class DoorAgroState : DoorBaseState
 {
-    private Transform doorTarget;
-
     public override void OnEnter(SimpleEnemyStateManager manager)
     {
-        Debug.Log("Entering DoorAgroState");
+        // Получаем доступную точку для атаки
+        var availableAttackPoint = manager.GetAvailableAttackPoint();
 
-        doorTarget = manager.GetDoorTarget();
-
-        if (doorTarget == null)
+        if (availableAttackPoint != null)
         {
-            Debug.LogError("No door target found!");
-            return;
+            // Устанавливаем точку атаки
+            manager.SetDestination(availableAttackPoint);
+            availableAttackPoint.GetComponent<AttackPoint>().SetOccupied(true);  // Занимаем точку
         }
-
-        manager.SetSpeed(manager.walkSpeed);  // Получаем walkSpeed через свойство
-        manager.animator.SetBool("IsAttack", false);
-        manager.animator.SetBool("IsWalking", true);
-
-        manager.SetDestination(doorTarget);
+        else
+        {
+            // Все точки заняты, переходим в состояние ожидания
+            manager.SwitchState(manager.doorIdleState);
+        }
     }
 
-    public override void OnExit(SimpleEnemyStateManager manager) { }
+    public override void OnExit(SimpleEnemyStateManager manager)
+    {
+        // Освобождаем точку после выхода из состояния
+        var attackPoint = manager.GetAvailableAttackPoint();
+        if (attackPoint != null)
+        {
+            attackPoint.GetComponent<AttackPoint>().SetOccupied(false);
+        }
+    }
 
     public override void OnUpdate(SimpleEnemyStateManager manager)
     {
-        if (doorTarget == null) return;
-
-        float distance = Vector3.Distance(manager.transform.position, doorTarget.position);
-
-        if (distance <= manager.attackDistance)  // Получаем attackDistance через свойство
+        if (manager.DistanceToTarget() <= manager.AttackDistance)
         {
             manager.SwitchState(manager.doorAttackState);
         }

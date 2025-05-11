@@ -10,23 +10,26 @@ public class DoorHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // Метод для получения урона
-    public void TakeDamage(int amount)
+    public void TakeDamage(int damage)
     {
-        currentHealth -= amount;
-        Debug.Log($"Door took {amount} damage. Current HP: {currentHealth}");
-
+        currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            Die();
+            currentHealth = 0;
+            DestroyDoor();  // Разрушаем дверь, когда здоровье становится 0
         }
     }
 
-    // Метод уничтожения двери
-    private void Die()
+    private void DestroyDoor()
     {
+        // Здесь можно добавить логику для уничтожения двери
+        // Например, удаляем коллайдер или просто отключаем объект
         Debug.Log("Door destroyed!");
-        // Здесь можно проиграть анимацию, вызвать эффект, отключить коллайдер и т.п.
-        Destroy(gameObject);
+        Destroy(gameObject);  // Удаляем объект двери
+    }
+
+    public bool IsDead()
+    {
+        return currentHealth <= 0;
     }
 }
