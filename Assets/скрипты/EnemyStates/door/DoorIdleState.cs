@@ -23,12 +23,12 @@ public class DoorIdleState : DoorBaseState
         if (checkTimer >= checkInterval)
         {
             checkTimer = 0f;
-            var attackZone = manager.GetNearestAttackZone();
 
+            Collider attackZone = manager.GetNearestAttackZone();
             if (attackZone != null)
             {
                 manager.SwitchState(manager.doorAgroState);
-                manager.SetDestination(attackZone.transform.position);
+                manager.SetAttackDestination(attackZone);
             }
         }
     }

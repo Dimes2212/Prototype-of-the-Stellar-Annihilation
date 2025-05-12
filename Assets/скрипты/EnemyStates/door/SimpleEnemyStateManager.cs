@@ -27,7 +27,7 @@ public class SimpleEnemyStateManager : MonoBehaviour
     [Header("Attack Zones")]
     [SerializeField] private Collider[] attackZones;
 
-    // Свойства
+    // Свойства (readonly)
     public float walkSpeed => _walkSpeed;
     public float attackDistance => _attackDistance;
     public float attackCooldown => _attackCooldown;
@@ -35,7 +35,6 @@ public class SimpleEnemyStateManager : MonoBehaviour
 
     private void Awake()
     {
-        // Инициализация компонентов
         if (animator == null) animator = GetComponent<Animator>();
         if (navMeshAgent == null) navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -66,28 +65,25 @@ public class SimpleEnemyStateManager : MonoBehaviour
     public void Die()
     {
         SwitchState(doorDeathState);
-
-        // Дополнительные действия при смерти
         if (animator != null)
         {
             animator.SetTrigger("IsDead");
         }
     }
 
-    // Остальные методы без изменений
     public void SetSpeed(float speed) => navMeshAgent.speed = speed;
 
-    public void SetDestination(Vector3 position)
+    public void SetAttackDestination(Collider zone)
     {
-        navMeshAgent.SetDestination(position);
-        navMeshAgent.isStopped = false;
-    }
+        if (zone == null) return;
 
-    public float DistanceToCollider(Collider collider)
-    {
-        if (collider == null) return Mathf.Infinity;
-        Vector3 closestPoint = collider.ClosestPoint(transform.position);
-        return Vector3.Distance(transform.position, closestPoint);
+        var attackPoint = zone.GetComponent<AttackPoint>();
+        Vector3 destination = attackPoint != null
+            ? attackPoint.GetRandomPositionInZone()
+            : zone.transform.position;
+
+        navMeshAgent.SetDestination(destination);
+        navMeshAgent.isStopped = false;
     }
 
     public Collider GetNearestAttackZone()
@@ -101,7 +97,12 @@ public class SimpleEnemyStateManager : MonoBehaviour
         {
             if (zone == null || !zone.gameObject.activeSelf) continue;
 
-            float distance = DistanceToCollider(zone);
+            var attackPoint = zone.GetComponent<AttackPoint>();
+            Vector3 targetPoint = attackPoint != null
+                ? attackPoint.GetRandomPositionInZone()
+                : zone.transform.position;
+
+            float distance = Vector3.Distance(transform.position, targetPoint);
             if (distance < minDistance)
             {
                 minDistance = distance;
@@ -109,6 +110,14 @@ public class SimpleEnemyStateManager : MonoBehaviour
             }
         }
         return nearestZone;
+    }
+
+    public float DistanceToCollider(Collider collider)
+    {
+        if (collider == null) return Mathf.Infinity;
+
+        Vector3 closestPoint = collider.ClosestPoint(transform.position);
+        return Vector3.Distance(transform.position, closestPoint);
     }
 
     public void AttackDoor()

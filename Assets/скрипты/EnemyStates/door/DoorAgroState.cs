@@ -11,17 +11,7 @@ public class DoorAgroState : DoorBaseState
         if (targetZone != null)
         {
             manager.SetSpeed(manager.walkSpeed);
-
-            // Новое: использование случайной точки внутри зоны
-            if (targetZone.TryGetComponent<AttackPoint>(out var zone))
-            {
-                manager.SetDestination(zone.GetRandomPoint());
-            }
-            else
-            {
-                manager.SetDestination(targetZone.transform.position);
-            }
-
+            manager.SetAttackDestination(targetZone);
             manager.animator.SetBool("IsWalking", true);
         }
         else
@@ -38,7 +28,6 @@ public class DoorAgroState : DoorBaseState
             return;
         }
 
-        // Изменено: использование DistanceToCollider вместо Vector3.Distance
         float distance = manager.DistanceToCollider(targetZone);
 
         if (distance <= manager.attackDistance)

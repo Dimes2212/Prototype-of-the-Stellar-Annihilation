@@ -23,28 +23,32 @@ public class AttackPoint : MonoBehaviour
     [SerializeField] private ParticleSystem hitEffect;
     [SerializeField] private AudioClip hitSound;
 
-    private BoxCollider boxCollider;
+    private BoxCollider _collider;
 
-    public float DamageMultiplier => damageMultiplier;
-    public bool IsActive => isActive;
+    private void Awake() => _collider = GetComponent<BoxCollider>();
 
-    private void Awake()
+    public Vector3 GetRandomPositionInZone()
     {
-        boxCollider = GetComponent<BoxCollider>();
+        // Генерируем случайную точку внутри коллайдера
+        Vector3 randomPoint = new Vector3(
+            Random.Range(-_collider.size.x / 2, _collider.size.x / 2),
+            Random.Range(-_collider.size.y / 2, _collider.size.y / 2),
+            Random.Range(-_collider.size.z / 2, _collider.size.z / 2)
+        );
+
+        // Трансформируем точку с учетом поворота и позиции
+        return transform.TransformPoint(_collider.center + randomPoint);
     }
 
-    public Vector3 GetRandomPoint()
+    public bool IsPositionInZone(Vector3 position)
     {
-        if (boxCollider != null)
-        {
-            Vector3 randomPoint = new Vector3(
-                Random.Range(-boxCollider.size.x / 2, boxCollider.size.x / 2),
-                Random.Range(-boxCollider.size.y / 2, boxCollider.size.y / 2),
-                Random.Range(-boxCollider.size.z / 2, boxCollider.size.z / 2)
-            );
-            return transform.TransformPoint(boxCollider.center + randomPoint);
-        }
-        return transform.position;
+        // Конвертируем мировые координаты в локальные
+        Vector3 localPos = transform.InverseTransformPoint(position) - _collider.center;
+
+        // Проверяем находится ли точка внутри границ
+        return Mathf.Abs(localPos.x) <= _collider.size.x / 2 &&
+               Mathf.Abs(localPos.y) <= _collider.size.y / 2 &&
+               Mathf.Abs(localPos.z) <= _collider.size.z / 2;
     }
 
     public void PlayHitEffects()
@@ -55,47 +59,34 @@ public class AttackPoint : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (boxCollider == null) boxCollider = GetComponent<BoxCollider>();
-        if (boxCollider == null) return;
+        if (_collider == null) _collider = GetComponent<BoxCollider>();
 
-        // Сохраняем текущую матрицу
-        Matrix4x4 originalMatrix = Gizmos.matrix;
-
-        // Устанавливаем матрицу трансформации коллайдера
-        Gizmos.matrix = Matrix4x4.TRS(
-            transform.TransformPoint(boxCollider.center),
-            transform.rotation,
-            transform.lossyScale
-        );
-
-        // Рисуем контур коллайдера
-        Gizmos.color = new Color(1, 0, 0, 0.7f);
-        Gizmos.DrawWireCube(Vector3.zero, boxCollider.size);
-
-        // Восстанавливаем матрицу
-        Gizmos.matrix = originalMatrix;
+        Gizmos.color = new Color(1, 0, 0, 0.3f);
+        DrawColliderGizmo();
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (boxCollider == null) boxCollider = GetComponent<BoxCollider>();
-        if (boxCollider == null) return;
+        if (_collider == null) _collider = GetComponent<BoxCollider>();
 
-        // Сохраняем текущую матрицу
+        Gizmos.color = new Color(1, 0, 0, 0.7f);
+        DrawColliderGizmo();
+
+        // Пример случайной точки
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(GetRandomPositionInZone(), 0.2f);
+    }
+
+    private void DrawColliderGizmo()
+    {
         Matrix4x4 originalMatrix = Gizmos.matrix;
-
-        // Устанавливаем матрицу трансформации коллайдера
         Gizmos.matrix = Matrix4x4.TRS(
-            transform.TransformPoint(boxCollider.center),
+            transform.TransformPoint(_collider.center),
             transform.rotation,
             transform.lossyScale
         );
 
-        // Рисуем полупрозрачный куб
-        Gizmos.color = new Color(1, 0, 0, 0.3f);
-        Gizmos.DrawCube(Vector3.zero, boxCollider.size);
-
-        // Восстанавливаем матрицу
+        Gizmos.DrawWireCube(Vector3.zero, _collider.size);
         Gizmos.matrix = originalMatrix;
     }
 }
