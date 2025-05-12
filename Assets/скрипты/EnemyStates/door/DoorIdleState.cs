@@ -2,21 +2,13 @@ using UnityEngine;
 
 public class DoorIdleState : DoorBaseState
 {
-    private float checkInterval = 1f;  // интервал между проверками
+    private float checkInterval = 1f;
     private float checkTimer = 0f;
 
     public override void OnEnter(SimpleEnemyStateManager manager)
     {
-        Debug.Log("Entering IdleState");
-
-        // Убедитесь, что manager не равен null
-        if (manager.GetDoorTarget() == null)
-        {
-            Debug.LogError("Door target is not assigned.");
-            return;
-        }
-
-        manager.animator.SetBool("IsIdle", true);  // Анимация ожидания
+        manager.animator.SetBool("IsIdle", true);
+        manager.navMeshAgent.isStopped = true;
     }
 
     public override void OnExit(SimpleEnemyStateManager manager)
@@ -31,32 +23,13 @@ public class DoorIdleState : DoorBaseState
         if (checkTimer >= checkInterval)
         {
             checkTimer = 0f;
-            Transform availablePoint = GetAvailableAttackPoint(manager);
+            var attackZone = manager.GetNearestAttackZone();
 
-            if (availablePoint != null)
+            if (attackZone != null)
             {
-                Debug.Log("Found available attack point, switching to AgroState.");
                 manager.SwitchState(manager.doorAgroState);
-                manager.SetDestination(availablePoint);  // Назначаем цель для движения
-            }
-            else
-            {
-                Debug.Log("No available attack point found.");
+                manager.SetDestination(attackZone.transform.position);
             }
         }
-    }
-
-    private Transform GetAvailableAttackPoint(SimpleEnemyStateManager manager)
-    {
-        foreach (Transform point in manager.GetAttackPoints())
-        {
-            AttackPoint attackPoint = point.GetComponent<AttackPoint>();
-            if (attackPoint != null && !attackPoint.IsOccupied)
-            {
-                Debug.Log("Available attack point found: " + point.name);  // Логируем доступную точку
-                return point;
-            }
-        }
-        return null;  // Если все точки заняты, возвращаем null
     }
 }
