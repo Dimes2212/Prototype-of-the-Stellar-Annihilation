@@ -247,7 +247,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 2d5565ce946029c4faef208d99beb3c6, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 53d5f206170ba416fbed6b0b68719d7e, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: IsAgro
@@ -391,7 +391,7 @@ AnimatorStateMachine:
     m_Position: {x: 440, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1198016489620930773}
-    m_Position: {x: 780, y: 180, z: 0}
+    m_Position: {x: 770, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6761558796495139898}
     m_Position: {x: 400, y: 330, z: 0}
