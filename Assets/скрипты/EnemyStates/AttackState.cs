@@ -10,10 +10,10 @@ public class AttackState : BaseState
     public override void ExitState(EnemyStateManager manager) { }
     public override void UpdateState(EnemyStateManager manager)
     {
-        if (manager.DistanceToTarget() >= manager.attackDistance)
-        {
-            manager.SwitchState(manager.agroState);
-            return;
-        }
+        //if (manager.DistanceToTarget() >= manager.attackDistance)
+        //{
+        //    manager.SwitchState(manager.agroState);
+        //    return;
+        //}
     }
 }
