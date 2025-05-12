@@ -3,145 +3,135 @@ using UnityEngine.AI;
 
 public class SimpleEnemyStateManager : MonoBehaviour
 {
+    // Состояния
     public DoorBaseState currentState;
-    public DoorIdleState doorIdleState;
-    public DoorAgroState doorAgroState;
-    public DoorAttackState doorAttackState;
-    public DoorDeathState doorDeathState;
+    public DoorIdleState doorIdleState = new DoorIdleState();
+    public DoorAgroState doorAgroState = new DoorAgroState();
+    public DoorAttackState doorAttackState = new DoorAttackState();
+    public DoorDeathState doorDeathState = new DoorDeathState();
 
+    // Компоненты
+    [Header("Components")]
     public Animator animator;
     public NavMeshAgent navMeshAgent;
 
-    [SerializeField] private Transform doorTarget;  // Цель - дверь
-    [SerializeField] private Transform[] attackPoints;  // Точки для атаки
-
+    // Настройки
+    [Header("Settings")]
+    [SerializeField] private DoorHealth doorHealth;
     [SerializeField] private float _walkSpeed = 3.5f;
     [SerializeField] private float _attackDistance = 1.5f;
+    [SerializeField] private float _attackCooldown = 1.5f;
+    [SerializeField] private int _attackDamage = 10;
 
-    public float walkSpeed { get { return _walkSpeed; } }
-    public float attackDistance { get { return _attackDistance; } }
+    // Зоны атаки
+    [Header("Attack Zones")]
+    [SerializeField] private Collider[] attackZones;
+
+    // Свойства (readonly)
+    public float walkSpeed => _walkSpeed;
+    public float attackDistance => _attackDistance;
+    public float attackCooldown => _attackCooldown;
+    public int attackDamage => _attackDamage;
 
     private void Awake()
     {
-        // Инициализация всех состояний
-        doorIdleState = new DoorIdleState();
-        doorAgroState = new DoorAgroState();
-        doorAttackState = new DoorAttackState();
-        doorDeathState = new DoorDeathState();
+        if (animator == null) animator = GetComponent<Animator>();
+        if (navMeshAgent == null) navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Start()
     {
-        Debug.Log("SimpleEnemyStateManager started.");
-        // Проверим, назначены ли все состояния и компоненты
-        if (doorIdleState == null || doorAgroState == null || doorAttackState == null || doorDeathState == null)
-        {
-            Debug.LogError("One or more states are not assigned in the Inspector.");
-            return;
-        }
-
-        if (animator == null)
-        {
-            Debug.LogError("Animator is not assigned.");
-            return;
-        }
-
-        if (navMeshAgent == null)
-        {
-            Debug.LogError("NavMeshAgent is not assigned.");
-            return;
-        }
-
-        SwitchState(doorIdleState);  // Начинаем с ожидания
+        SwitchState(doorIdleState);
     }
 
     private void Update()
     {
-        // Проверим, что состояние меняется
-        currentState?.OnUpdate(this);
-
-        // Обновляем анимации в зависимости от состояния
-        UpdateAnimatorState();
+        if (currentState != doorDeathState)
+        {
+            currentState?.OnUpdate(this);
+            UpdateAnimatorState();
+        }
     }
 
-    // Смена состояния
     public void SwitchState(DoorBaseState newState)
     {
-        if (currentState == newState)
-            return; // Предотвращаем ненужный переход в одно и то же состояние
-
-        Debug.Log("Switching to state: " + newState.GetType().Name); // Логируем переход
+        if (currentState == newState) return;
 
         currentState?.OnExit(this);
         currentState = newState;
         currentState.OnEnter(this);
     }
 
-    public void SetSpeed(float speed)
+    public void Die()
     {
-        navMeshAgent.speed = speed;
-    }
-
-    public void SetDestination(Transform target)
-    {
-        if (target == null) return;
-        navMeshAgent.destination = target.position;
-        navMeshAgent.isStopped = false;  // Убедитесь, что агент двигается
-        Debug.Log("Setting destination to: " + target.position);  // Логируем установку цели
-    }
-
-    public Transform GetDoorTarget()
-    {
-        return doorTarget;
-    }
-
-    public Transform[] GetAttackPoints()
-    {
-        return attackPoints;
-    }
-
-    public Transform GetAttackPoint()
-    {
-        // Выбираем ближайшую свободную точку для атаки
-        foreach (var point in attackPoints)
+        SwitchState(doorDeathState);
+        if (animator != null)
         {
-            AttackPoint attackPoint = point.GetComponent<AttackPoint>();
-            if (attackPoint != null && !attackPoint.IsOccupied)
+            animator.SetTrigger("IsDead");
+        }
+    }
+
+    public void SetSpeed(float speed) => navMeshAgent.speed = speed;
+
+    public void SetAttackDestination(Collider zone)
+    {
+        if (zone == null) return;
+
+        var attackPoint = zone.GetComponent<AttackPoint>();
+        Vector3 destination = attackPoint != null
+            ? attackPoint.GetRandomPositionInZone()
+            : zone.transform.position;
+
+        navMeshAgent.SetDestination(destination);
+        navMeshAgent.isStopped = false;
+    }
+
+    public Collider GetNearestAttackZone()
+    {
+        if (attackZones == null || attackZones.Length == 0) return null;
+
+        Collider nearestZone = null;
+        float minDistance = float.MaxValue;
+
+        foreach (var zone in attackZones)
+        {
+            if (zone == null || !zone.gameObject.activeSelf) continue;
+
+            var attackPoint = zone.GetComponent<AttackPoint>();
+            Vector3 targetPoint = attackPoint != null
+                ? attackPoint.GetRandomPositionInZone()
+                : zone.transform.position;
+
+            float distance = Vector3.Distance(transform.position, targetPoint);
+            if (distance < minDistance)
             {
-                return point;
+                minDistance = distance;
+                nearestZone = zone;
             }
         }
-        return null;
+        return nearestZone;
     }
 
-    public float DistanceToTarget()
+    public float DistanceToCollider(Collider collider)
     {
-        return Vector3.Distance(transform.position, doorTarget.position);
+        if (collider == null) return Mathf.Infinity;
+
+        Vector3 closestPoint = collider.ClosestPoint(transform.position);
+        return Vector3.Distance(transform.position, closestPoint);
+    }
+
+    public void AttackDoor()
+    {
+        if (doorHealth != null && !doorHealth.IsDead)
+        {
+            doorHealth.TakeDamage(attackDamage);
+        }
     }
 
     private void UpdateAnimatorState()
     {
-        if (currentState == doorIdleState)
-        {
-            animator.SetBool("IsIdle", true);
-            animator.SetBool("IsWalking", false);
-            animator.SetBool("IsAttack", false);
-        }
-        else if (currentState == doorAgroState)
-        {
-            animator.SetBool("IsIdle", false);
-            animator.SetBool("IsWalking", true);
-            animator.SetBool("IsAttack", false);
-        }
-        else if (currentState == doorAttackState)
-        {
-            animator.SetBool("IsIdle", false);
-            animator.SetBool("IsWalking", false);
-            animator.SetBool("IsAttack", true);
-        }
-        else if (currentState == doorDeathState)
-        {
-            animator.SetBool("IsDead", true);
-        }
+        animator.SetBool("IsIdle", currentState == doorIdleState);
+        animator.SetBool("IsWalking", currentState == doorAgroState);
+        animator.SetBool("IsAttack", currentState == doorAttackState);
     }
 }

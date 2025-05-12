@@ -3,20 +3,25 @@ using UnityEngine;
 public class DoorHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
+    [SerializeField] private GameObject destructionEffect;
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioClip destroySound;
+
     private int currentHealth;
-
-    [SerializeField] private Transform[] attackPoints;  // Точки для атаки
-
     private bool isDead = false;
+    private AudioSource audioSource;
+
+    public int CurrentHealth => currentHealth;
+    public bool IsDead => isDead;
 
     private void Awake()
     {
         currentHealth = maxHealth;
-    }
-
-    public bool IsDead()
-    {
-        return isDead;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     public void TakeDamage(int damage)
@@ -24,7 +29,9 @@ public class DoorHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= damage;
-        Debug.Log($"Door received {damage} damage. Current health: {currentHealth}");
+        PlaySound(hitSound);
+
+        Debug.Log($"Door took {damage} damage. Remaining health: {currentHealth}");
 
         if (currentHealth <= 0)
         {
@@ -35,25 +42,35 @@ public class DoorHealth : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        Debug.Log("The door has been destroyed!");
+        PlaySound(destroySound);
 
-        // Можно добавить анимацию разрушения двери или другие эффекты
-        // Например, добавим задержку перед уничтожением объекта
+        if (destructionEffect != null)
+        {
+            Instantiate(destructionEffect, transform.position, transform.rotation);
+        }
 
-        // Удаляем объект через 2 секунды (можно заменить на другой эффект, если требуется)
+        // Отключаем коллайдер и рендерер
+        var collider = GetComponent<Collider>();
+        if (collider != null) collider.enabled = false;
+
+        var renderer = GetComponent<Renderer>();
+        if (renderer != null) renderer.enabled = false;
+
+        // Уничтожаем объект через 2 секунды (после проигрывания звука)
         Destroy(gameObject, 2f);
     }
 
-    public Transform GetAvailableAttackPoint()
+    private void PlaySound(AudioClip clip)
     {
-        foreach (var point in attackPoints)
+        if (clip != null && audioSource != null)
         {
-            AttackPoint attackPoint = point.GetComponent<AttackPoint>();
-            if (attackPoint != null && !attackPoint.IsOccupied)
-            {
-                return point;
-            }
+            audioSource.PlayOneShot(clip);
         }
-        return null;  // Если все точки заняты, возвращаем null
+    }
+
+    // Для восстановления здоровья (если нужно)
+    public void Heal(int amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
 }
