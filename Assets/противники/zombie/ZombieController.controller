@@ -338,7 +338,7 @@ AnimatorState:
   m_Motion: {fileID: -203655887218126122, guid: 6f975c1a066095b4289cde876f257cc7, type: 3}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: 
+  m_MirrorParameter: IsAgro
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1101 &5891203617429940733
