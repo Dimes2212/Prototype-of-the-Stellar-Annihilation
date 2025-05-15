@@ -1,33 +1,26 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class SimpleEnemyStateManager : MonoBehaviour
 {
-    // Состояния
     public DoorBaseState currentState;
     public DoorIdleState doorIdleState = new DoorIdleState();
     public DoorAgroState doorAgroState = new DoorAgroState();
     public DoorAttackState doorAttackState = new DoorAttackState();
     public DoorDeathState doorDeathState = new DoorDeathState();
 
-    // Компоненты
-    [Header("Components")]
     public Animator animator;
     public NavMeshAgent navMeshAgent;
 
-    // Настройки
-    [Header("Settings")]
     [SerializeField] private DoorHealth doorHealth;
     [SerializeField] private float _walkSpeed = 3.5f;
     [SerializeField] private float _attackDistance = 1.5f;
     [SerializeField] private float _attackCooldown = 1.5f;
     [SerializeField] private int _attackDamage = 10;
 
-    // Зоны атаки
-    [Header("Attack Zones")]
     [SerializeField] private Collider[] attackZones;
 
-    // Свойства (readonly)
     public float walkSpeed => _walkSpeed;
     public float attackDistance => _attackDistance;
     public float attackCooldown => _attackCooldown;
@@ -65,10 +58,17 @@ public class SimpleEnemyStateManager : MonoBehaviour
     public void Die()
     {
         SwitchState(doorDeathState);
-        if (animator != null)
-        {
-            animator.SetTrigger("IsDead");
-        }
+        animator.SetTrigger("Die");
+
+        // Отключаем ИИ, передвижение и прочее
+        if (navMeshAgent != null) navMeshAgent.enabled = false;
+        this.enabled = false; // выключаем сам стейт-менеджер
+    }
+
+    public void DestroySelf()
+    {
+        Debug.Log("Удаляем");
+        Destroy(gameObject);
     }
 
     public void SetSpeed(float speed) => navMeshAgent.speed = speed;
