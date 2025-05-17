@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string loadingSceneName = "LoadingScene"; // Название буферной сцены
-    public string targetSceneName = "GameScene";      // Название финальной сцены (куда переходить)
+    public string loadingSceneName = "LoadingScene";
+    public string targetSceneName = "GameScene";
+    public float minLoadingDisplayTime = 1.5f; // Минимальное время показа экрана загрузки
 
     public void LoadSceneWithBuffer()
     {
@@ -14,19 +15,36 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator LoadSceneProcess()
     {
-        // Сначала загружаем буферную Loading сцену
-        SceneManager.LoadScene(loadingSceneName);
+        // 1. Загружаем сцену загрузки ADDITIVE (добавляем поверх текущей)
+        yield return SceneManager.LoadSceneAsync(loadingSceneName, LoadSceneMode.Additive);
 
-        // Ждём один кадр
+        // 2. Ждём минимум 1 кадр для инициализации UI загрузки
         yield return null;
 
-        // Теперь грузим целевую сцену в фоне
+        // 3. Начинаем загрузку основной сцены
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(targetSceneName);
+        asyncLoad.allowSceneActivation = false; // Важно: запрещаем авто-переход
 
-        // Ждём пока не загрузится полностью
-        while (!asyncLoad.isDone)
+        float timer = 0f;
+
+        // 4. Ждём завершения загрузки И минимальное время показа
+        while (!asyncLoad.isDone || timer < minLoadingDisplayTime)
         {
+            timer += Time.deltaTime;
+
+            // Когда загрузка почти завершена (90%) и прошло минимальное время
+            if (asyncLoad.progress >= 0.9f && timer >= minLoadingDisplayTime)
+            {
+                asyncLoad.allowSceneActivation = true; // Разрешаем переход
+            }
+
+            // Здесь можно обновлять прогресс-бар, если есть
+            // loadingProgressBar.value = asyncLoad.progress;
+
             yield return null;
         }
+
+        // 5. Выгружаем сцену загрузки (опционально)
+        yield return SceneManager.UnloadSceneAsync(loadingSceneName);
     }
 }
