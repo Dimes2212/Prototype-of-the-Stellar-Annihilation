@@ -3,19 +3,32 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PauseManager : MonoBehaviour
 {
+    [Header("Pause Settings")]
     public GameObject pauseMenuUI;
     public GameObject player;
     public InputActionReference pauseAction;
-    public string[] restrictedTags; // Массив запрещённых тегов
+    public string[] restrictedTags;
+
+    [Header("Scene Transition Settings")]
+    public string loadingSceneName = "LoadingScene";
+    public float minLoadingTime = 1.5f;
 
     private bool isPaused = false;
+    private bool isChangingScene = false;
     private List<Collider> disabledColliders = new();
     private List<Rigidbody> affectedRigidbodies = new();
 
     void Start()
+    {
+        InitializePauseSystem();
+    }
+
+    void InitializePauseSystem()
     {
         if (pauseMenuUI != null)
             pauseMenuUI.SetActive(false);
@@ -45,12 +58,17 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame && !isChangingScene)
             TogglePause();
     }
 
-    private void OnPausePressed(InputAction.CallbackContext ctx) => TogglePause();
+    private void OnPausePressed(InputAction.CallbackContext ctx)
+    {
+        if (!isChangingScene)
+            TogglePause();
+    }
 
+    #region Pause/Resume Functions
     private void TogglePause()
     {
         if (isPaused) Resume();
@@ -137,4 +155,79 @@ public class PauseManager : MonoBehaviour
         disabledColliders.Clear();
         affectedRigidbodies.Clear();
     }
+    #endregion
+
+    #region Scene Transition Functions
+    public void LoadScene(string sceneName)
+    {
+        if (!isChangingScene)
+        {
+            isChangingScene = true;
+            Time.timeScale = 1f; // Сбрасываем таймскейл перед загрузкой
+            SceneManager.LoadScene(sceneName);
+        }
+    }
+
+    public void LoadSceneWithLoadingScreen(string sceneName)
+    {
+        if (!isChangingScene)
+        {
+            isChangingScene = true;
+            StartCoroutine(LoadSceneWithLoadingRoutine(sceneName));
+        }
+    }
+
+    private IEnumerator LoadSceneWithLoadingRoutine(string sceneName)
+    {
+        // Сбрасываем паузу перед загрузкой
+        if (isPaused) Resume();
+
+        // Загружаем сцену загрузки
+        yield return SceneManager.LoadSceneAsync(loadingSceneName, LoadSceneMode.Additive);
+
+        // Ждём минимум один кадр
+        yield return null;
+
+        // Начинаем загрузку целевой сцены
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
+
+        float timer = 0f;
+
+        while (!asyncLoad.isDone || timer < minLoadingTime)
+        {
+            timer += Time.deltaTime;
+
+            if (asyncLoad.progress >= 0.9f && timer >= minLoadingTime)
+            {
+                asyncLoad.allowSceneActivation = true;
+            }
+
+            yield return null;
+        }
+
+        isChangingScene = false;
+    }
+    #endregion
+
+    #region UI Button Handlers
+    public void RestartCurrentScene()
+    {
+        LoadSceneWithLoadingScreen(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadMainMenu()
+    {
+        LoadSceneWithLoadingScreen("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+    #endregion
 }
