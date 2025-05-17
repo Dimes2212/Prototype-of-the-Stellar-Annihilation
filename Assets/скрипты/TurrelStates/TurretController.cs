@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-    public Transform firePoint;                  // Откуда летят пули
-    public GameObject bulletPrefab;              // Префаб пули
-    public float shootInterval = 1f;             // Интервал между выстрелами
-    public float detectionRange = 15f;           // Радиус обнаружения
-    public string targetTag = "Enemy";           // Тег врагов
-    public Transform rotatingPart;               // Башня, которая крутится (должна смотреть по X)
-    public LayerMask ignoreVisionLayers;         // Слои, через которые НЕ видно врага
+    public Transform firePoint;                  
+    public GameObject bulletPrefab;              
+    public float shootInterval = 1f;             
+    public float detectionRange = 15f;           
+    public string targetTag = "Enemy";           
+    public Transform rotatingPart;               
+    public LayerMask ignoreVisionLayers;         
 
     private float shootTimer = 0f;
     private Transform currentTarget;
