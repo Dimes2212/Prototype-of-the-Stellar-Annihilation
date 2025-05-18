@@ -7,7 +7,7 @@ public class DoorDeathState : DoorBaseState
 {
     public override void OnEnter(SimpleEnemyStateManager manager)
     {
-        GameStatsManager.Instance?.EnemyKilled();
+        manager.GetComponent<EnemyDeathNotifier>()?.NotifyDeath();
         Debug.Log("Entering Death State");
         // Отключаем движение
         //manager.navMeshAgent.isStopped = true;

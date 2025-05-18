@@ -1,5 +1,3 @@
-
-
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
@@ -12,7 +10,6 @@ public class Health : MonoBehaviour
     public UnityEvent onDamage;
     public UnityEvent onDeath;
 
-    
     public TextMeshProUGUI hologramText;
     public int rewardOnDeath = 0;
 
@@ -45,14 +42,12 @@ public class Health : MonoBehaviour
     {
         onDeath?.Invoke();
 
-        // Запускаем анимацию смерти
         if (animator != null)
         {
             animator.ResetTrigger("Die");
             animator.SetTrigger("Die");
         }
 
-        // Вызываем соответствующую логику смерти
         if (simpleEnemyStateManager != null)
         {
             simpleEnemyStateManager.Die();
@@ -61,7 +56,6 @@ public class Health : MonoBehaviour
         {
             enemyStateManager.Die();
         }
-        
     }
 
     void UpdateHologram()

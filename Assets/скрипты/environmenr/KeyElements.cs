@@ -1,90 +1,46 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System;
 
-public class SoundAndDestroy : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class CollectibleItem : MonoBehaviour
 {
-    [Header("Sound Settings")]
-    public AudioSource targetAudioSource;
-    public AudioClip collisionSound;
-    public float destroyDelay = 0.5f;
+    [Header("Effects")]
+    public AudioClip collectSound;
+    public ParticleSystem collectEffect;
 
-    [Header("Key Settings")]
-    public bool isKeyItem = false;
-    [Tooltip("Общее количество ключей, необходимых для победы")]
-    public static int totalKeysRequired = 4;
-    public static int keysCollected = 0;
+    [Header("Collision")]
+    public float minCollisionForce = 1f;
 
-    [Header("UI Settings")]
-    [SerializeField] private GameObject victoryPanel;
-    [SerializeField] private Text keysText;
-    [SerializeField] private Text timeText;
-
-    private static float gameStartTime;
+    private Rigidbody rb;
 
     private void Start()
     {
-        if (isKeyItem && keysCollected == 0)
-        {
-            gameStartTime = Time.time;
-        }
+        rb = GetComponent<Rigidbody>();
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (isKeyItem)
+            float force = collision.relativeVelocity.magnitude;
+            if (force >= minCollisionForce)
             {
-                CollectKey();
+                Collect();
             }
-            PlaySoundAndDestroy();
         }
     }
 
-    void CollectKey()
+    private void Collect()
     {
-        keysCollected++;
-        Debug.Log($"Ключей собрано: {keysCollected}/{totalKeysRequired}");
+        GameManager.Instance?.AddKey();
 
-        if (keysCollected >= totalKeysRequired)
-        {
-            ShowVictoryScreen();
-        }
-    }
+        if (collectSound != null)
+            AudioSource.PlayClipAtPoint(collectSound, transform.position);
 
-    void PlaySoundAndDestroy()
-    {
-        if (targetAudioSource != null && collisionSound != null)
-        {
-            targetAudioSource.PlayOneShot(collisionSound);
-        }
+        if (collectEffect != null)
+            Instantiate(collectEffect, transform.position, Quaternion.identity);
 
-        // Отключаем рендер и коллайдер перед уничтожением
-        var renderer = GetComponent<MeshRenderer>();
-        if (renderer != null) renderer.enabled = false;
-
-        var collider = GetComponent<Collider>();
-        if (collider != null) collider.enabled = false;
-
-        Destroy(gameObject, destroyDelay);
-    }
-
-    void ShowVictoryScreen()
-    {
-        if (victoryPanel == null) return;
-
-        victoryPanel.SetActive(true);
-        float playTime = Time.time - gameStartTime;
-        timeText.text = $"Время: {Mathf.FloorToInt(playTime / 60)}:{Mathf.FloorToInt(playTime % 60):00}";
-        keysText.text = $"Ключей собрано: {keysCollected}/{totalKeysRequired}";
-
-        // Пауза игры
-        Time.timeScale = 0f;
-    }
-
-    public static void ResetKeys()
-    {
-        keysCollected = 0;
+        GetComponent<Collider>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+        Destroy(gameObject, 0.5f);
     }
 }
