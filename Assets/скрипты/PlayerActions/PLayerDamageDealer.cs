@@ -7,7 +7,6 @@ public class PlayerDamageDealer : MonoBehaviour
     public float damageCooldown = 0.5f;
 
     private bool canDealDamage = true;
-
     private void OnTriggerEnter(Collider other)
     {
         if (!canDealDamage || !other.CompareTag(targetTag)) return;
@@ -19,7 +18,6 @@ public class PlayerDamageDealer : MonoBehaviour
             StartCoroutine(DamageCooldown());
         }
     }
-
     private System.Collections.IEnumerator DamageCooldown()
     {
         canDealDamage = false;
