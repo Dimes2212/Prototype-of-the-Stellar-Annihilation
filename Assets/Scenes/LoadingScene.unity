@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 9e6468e4bea2e46cca578b2507ae5e2b, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d51a2253cd79945d08fbe9589d8cb631, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1233,6 +1233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading_free_purple
       objectReference: {fileID: 0}
+    - target: {fileID: 5488512800074345544, guid: 9b5717009b11ee94aa6720fd2f3565c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1422,6 +1426,8 @@ MonoBehaviour:
   restrictedTags:
   - Weapon
   - Axe
+  loadingSceneName: LoadingScene
+  minLoadingTime: 1.5
 --- !u!1 &971157165
 GameObject:
   m_ObjectHideFlags: 0
