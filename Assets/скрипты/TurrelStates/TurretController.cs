@@ -88,7 +88,6 @@
 
 
 using UnityEngine;
-
 public class TurretController : MonoBehaviour
 {
     public Transform firePoint;
@@ -98,7 +97,6 @@ public class TurretController : MonoBehaviour
     public string targetTag = "Enemy";
     public Transform rotatingPart;
     public float rotationSpeed = 5f;
-
     private float shootTimer = 0f;
     private Transform currentTarget;
 
@@ -118,22 +116,17 @@ public class TurretController : MonoBehaviour
             }
         }
     }
-
     void FindTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetTag);
         float closestDistance = Mathf.Infinity;
         currentTarget = null;
-
         foreach (GameObject enemy in enemies)
         {
             Transform targetPoint = enemy.transform.Find("TurretTargetPoint");
             if (targetPoint == null) continue;
-
             float distance = Vector3.Distance(transform.position, targetPoint.position);
             if (distance > detectionRange) continue;
-
-            // Упрощенная проверка - просто выбираем ближайшую цель без проверки видимости
             if (distance < closestDistance)
             {
                 closestDistance = distance;
@@ -141,14 +134,11 @@ public class TurretController : MonoBehaviour
             }
         }
     }
-
     void RotateTowardsTarget()
     {
         if (rotatingPart == null || currentTarget == null) return;
-
         Vector3 direction = currentTarget.position - rotatingPart.position;
         direction.y = 0f;
-
         if (direction.sqrMagnitude > 0.01f)
         {
             Quaternion lookRotation = Quaternion.LookRotation(direction.normalized);
@@ -156,14 +146,12 @@ public class TurretController : MonoBehaviour
             rotatingPart.rotation = Quaternion.Slerp(rotatingPart.rotation, lookRotation, Time.deltaTime * rotationSpeed);
         }
     }
-
     void Shoot()
     {
         if (bulletPrefab != null && firePoint != null && currentTarget != null)
         {
             Vector3 shootDirection = (currentTarget.position - firePoint.position).normalized;
             Quaternion rotation = Quaternion.LookRotation(shootDirection);
-
             Instantiate(bulletPrefab, firePoint.position, rotation);
         }
     }
