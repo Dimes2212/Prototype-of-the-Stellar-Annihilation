@@ -6,7 +6,8 @@ public class DeathState : BaseState
     {
         Debug.Log("Entering Death State");
 
-        
+        GameStatsManager.Instance?.EnemyKilled();
+
         manager.animator.SetBool("isDead", true);
         manager.animator.SetBool("IsIdle", false);
         manager.animator.SetBool("IsPatrolling", false);

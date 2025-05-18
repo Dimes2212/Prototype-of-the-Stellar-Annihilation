@@ -61,8 +61,8 @@ public class SimpleEnemyStateManager : MonoBehaviour
         animator.SetTrigger("Die");
 
         // Отключаем ИИ, передвижение и прочее
-        if (navMeshAgent != null) navMeshAgent.enabled = false;
-        this.enabled = false; // выключаем сам стейт-менеджер
+        //if (navMeshAgent != null) navMeshAgent.enabled = false;
+        //this.enabled = false; // выключаем сам стейт-менеджер
     }
 
     public void DestroySelf()
