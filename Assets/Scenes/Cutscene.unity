@@ -1575,6 +1575,8 @@ MonoBehaviour:
   restrictedTags:
   - Weapon
   - Axe
+  loadingSceneName: LoadingScene
+  minLoadingTime: 1.5
 --- !u!1001 &860453036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2123,7 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5d60ff144e5c54daaceccfa436c014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typingSpeed: 0.36
+  typingSpeed: 0.2
   clearOnStart: 1
   typingSound: {fileID: 0}
   continueButton: {fileID: 1000606030}
