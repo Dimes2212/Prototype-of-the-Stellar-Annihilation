@@ -31,9 +31,11 @@ public class Health : MonoBehaviour
     }
     void Die()
     {
+        
         onDeath?.Invoke();
         if (animator != null)
         {
+            animator.Play("Death", -1, 0f);
             animator.ResetTrigger("Die");
             animator.SetTrigger("Die");
         }
