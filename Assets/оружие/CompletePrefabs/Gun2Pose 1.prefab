@@ -100,6 +100,10 @@ PrefabInstance:
       value: Gun2Pose 1
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: f9aaf45d344cdb64291ca6dc60281961, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9aaf45d344cdb64291ca6dc60281961, type: 3}
       propertyPath: m_TagString
       value: ShotGun
       objectReference: {fileID: 0}
