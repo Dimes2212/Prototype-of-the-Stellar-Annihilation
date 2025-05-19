@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,9 +21,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeText;
 
     private bool isGameActive = true;
+    private bool hasWon = false; // ← добавляем флаг победы
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         if (Instance == null)
         {
             Instance = this;
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            
         }
     }
 
@@ -47,8 +48,10 @@ public class GameManager : MonoBehaviour
     public void AddKey()
     {
         keysCollected++;
+        Debug.Log($"Ключей собрано: {keysCollected}");
         CheckWinCondition();
     }
+
 
     public void AddKill()
     {
@@ -57,11 +60,13 @@ public class GameManager : MonoBehaviour
 
     private void CheckWinCondition()
     {
+        if (hasWon) return; // ← предотвращаем повторный вызов
+
         if (keysCollected >= keysToWin)
         {
+            hasWon = true;           // ← ставим флаг победы
             ShowStats();
-            isGameActive = false;
-            Time.timeScale = 0f;
+            // Time.timeScale = 0f;  ← УБРАНО! Игра НЕ ставится на паузу
         }
     }
 
@@ -79,7 +84,8 @@ public class GameManager : MonoBehaviour
         enemiesKilled = 0;
         playTime = 0f;
         isGameActive = true;
-        Time.timeScale = 1f;
+        hasWon = false;              // ← сбрасываем флаг победы
+        
         statsPanel.SetActive(false);
     }
 }

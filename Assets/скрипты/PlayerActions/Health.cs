@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
-using UnityEngine.SceneManagement; // Добавляем пространство имён для работы со сценами
+using UnityEngine.SceneManagement; 
 
 public class Health : MonoBehaviour
 {
@@ -11,8 +11,7 @@ public class Health : MonoBehaviour
     public UnityEvent onDeath;
     public TextMeshProUGUI hologramText;
     public int rewardOnDeath = 0;
-    [SerializeField] private string deathSceneName = "GameOver"; // Имя сцены для перехода при смерти
-    
+    [SerializeField] private string deathSceneName = "GameOver"; 
     private Animator animator;
     private SimpleEnemyStateManager simpleEnemyStateManager;
     private EnemyStateManager enemyStateManager;
@@ -58,8 +57,8 @@ public class Health : MonoBehaviour
             enemyStateManager.Die();
         }
 
-        // Переход на сцену смерти, если здоровье равно 0
-        if (currentHealth <= 0)
+        
+        if ((currentHealth <= 0) && (simpleEnemyStateManager == null) && (enemyStateManager == null))
         {
             LoadDeathScene();
         }
@@ -67,7 +66,7 @@ public class Health : MonoBehaviour
 
     void LoadDeathScene()
     {
-        SceneManager.LoadScene("deathSceneName");
+        //SceneManager.LoadScene("deathSceneName");
     }
 
     void UpdateHologram()

@@ -3,12 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CollectibleItem : MonoBehaviour
 {
-    [Header("Effects")]
+    
     public AudioClip collectSound;
     public ParticleSystem collectEffect;
 
-    [Header("Collision")]
-    public float minCollisionForce = 1f;
+   
 
     private Rigidbody rb;
 
@@ -21,11 +20,8 @@ public class CollectibleItem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            float force = collision.relativeVelocity.magnitude;
-            if (force >= minCollisionForce)
-            {
-                Collect();
-            }
+            Collect();
+            
         }
     }
 

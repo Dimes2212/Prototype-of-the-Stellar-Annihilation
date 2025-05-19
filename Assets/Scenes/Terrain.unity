@@ -2759,7 +2759,6 @@ GameObject:
   - component: {fileID: 105317570}
   - component: {fileID: 105317569}
   - component: {fileID: 105317572}
-  - component: {fileID: 105317568}
   m_Layer: 0
   m_Name: Button (5)
   m_TagString: Untagged
@@ -2787,22 +2786,6 @@ RectTransform:
   m_AnchoredPosition: {x: 89, y: -43}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &105317568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105317566}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c723383b183344a9281cb3df317fe472, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemCost: 100
-  itemPrefab: {fileID: 8020662135686365446, guid: ffb04e278a9874dfb8f617978fac9b3e, type: 3}
-  spawnPoint: {fileID: 0}
-  uniqueTag: Dagger
 --- !u!114 &105317569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2847,9 +2830,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 105317568}
-        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
-        m_MethodName: PurchaseItem
+      - m_Target: {fileID: 105317572}
+        m_TargetAssemblyTypeName: TurretShopButton, Assembly-CSharp
+        m_MethodName: PurchaseTurret
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3443,88 +3426,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 241687f1a2ac2ac4c8c35789ba1a8468, type: 3}
   m_PrefabInstance: {fileID: 138022252}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &142299511
-Material:
-  serializedVersion: 8
+--- !u!1 &141799128
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SingleLine-LightSaber(Clone)
-  m_Shader: {fileID: 4800000, guid: 2d9a4ca4b2730b64e8aade7030f8caeb, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _Glossiness: 0.5
-    - _LightSaberFactor: 0.8
-    - _LineScale: 0.003000334
-    - _LineWidth: 20
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _UvBasedLightSaberFactor: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141799129}
+  - component: {fileID: 141799130}
+  m_Layer: 0
+  m_Name: CompleteHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &141799129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141799128}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 675415787}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141799130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141799128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d899795641545c8a50bbb4a6ac7fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keysToWin: 1
+  statsPanel: {fileID: 1716504831}
+  keysText: {fileID: 1048387680}
+  killsText: {fileID: 1356399215}
+  timeText: {fileID: 1523317523}
 --- !u!1 &142670900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,7 +4629,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!65 &195886535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5055,7 +5004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 75.8
+      value: 53.2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5063,7 +5012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.7
+      value: 50.6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5237,7 +5186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!65 &222549561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6520,7 +6468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &259488018
 Transform:
   m_ObjectHideFlags: 0
@@ -10102,6 +10050,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 259488018}
+    - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 141799129}
     - targetCorrespondingSourceObject: {fileID: 8366379412631108205, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 875083209}
@@ -12827,7 +12778,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!65 &544915430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17938,7 +17888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &772433754
 Transform:
   m_ObjectHideFlags: 0
@@ -28809,7 +28759,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!65 &1185994912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31540,7 +31489,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!65 &1299692294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34707,7 +34655,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!65 &1389928316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37277,7 +37224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!65 &1483279416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37752,7 +37698,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!82 &1502987102
 AudioSource:
   m_ObjectHideFlags: 0
@@ -40509,7 +40454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb26dbb2d1be2471a84d0c37765c56f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2062583979}
+  enemyPrefab: {fileID: 3528946486444422728, guid: 929d22c96e9ce4d4ea1d286e7375f692, type: 3}
   spawnAreaMin: {fileID: 1228831694}
   spawnAreaMax: {fileID: 144939608}
   timeBetweenWaves: 10
@@ -40527,7 +40472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb26dbb2d1be2471a84d0c37765c56f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2062583979}
+  enemyPrefab: {fileID: 3528946486444422728, guid: 929d22c96e9ce4d4ea1d286e7375f692, type: 3}
   spawnAreaMin: {fileID: 1765098918}
   spawnAreaMax: {fileID: 1029434496}
   timeBetweenWaves: 10
@@ -40545,12 +40490,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb26dbb2d1be2471a84d0c37765c56f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2062583979}
+  enemyPrefab: {fileID: 3528946486444422728, guid: 929d22c96e9ce4d4ea1d286e7375f692, type: 3}
   spawnAreaMin: {fileID: 1354827570}
   spawnAreaMax: {fileID: 855966099}
   timeBetweenWaves: 10
   enemiesPerWave: 3
   timeBetweenSpawns: 1
+--- !u!21 &1631048562
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SingleLine-LightSaber(Clone)
+  m_Shader: {fileID: 4800000, guid: 2d9a4ca4b2730b64e8aade7030f8caeb, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Glossiness: 0.5
+    - _LightSaberFactor: 0.8
+    - _LineScale: 0.003000334
+    - _LineWidth: 20
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _UvBasedLightSaberFactor: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1636399782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42608,7 +42635,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1716504832}
   - component: {fileID: 1716504834}
-  - component: {fileID: 1716504833}
   m_Layer: 0
   m_Name: CompleteMenu
   m_TagString: Untagged
@@ -42632,7 +42658,7 @@ Transform:
   - {fileID: 1659113454}
   m_Father: {fileID: 675415787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1716504833
+--- !u!114 &1716504834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42641,28 +42667,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716504831}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835965f894d24470c9580b9ddbadfc0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 1659113453}
-  player: {fileID: 1304387210}
-  pauseAction: {fileID: 0}
-  restrictedTags: []
-  loadingSceneName: LoadingScene
-  minLoadingTime: 1.5
---- !u!114 &1716504834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716504831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0d899795641545c8a50bbb4a6ac7fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keysToWin: 4
+  keysToWin: 1
   statsPanel: {fileID: 1811786669}
   keysText: {fileID: 1048387680}
   killsText: {fileID: 1356399215}
@@ -45622,7 +45630,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectSound: {fileID: 0}
   collectEffect: {fileID: 0}
-  minCollisionForce: 1
 --- !u!65 &1808636685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46444,7 +46451,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1716504833}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: LoadMainMenu
         m_Mode: 1
@@ -51077,7 +51084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9073cfed823544b5eb5edafc3e172c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 200
   onDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -52100,11 +52107,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2517904, y: 4.308528, z: 3.6524687}
   m_Center: {x: 0.18705276, y: 2.2851741, z: 3.0181246}
---- !u!1 &2062583979 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3528946486444422728, guid: 929d22c96e9ce4d4ea1d286e7375f692, type: 3}
-  m_PrefabInstance: {fileID: 735579237}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2072287947
 PrefabInstance:
   m_ObjectHideFlags: 0
