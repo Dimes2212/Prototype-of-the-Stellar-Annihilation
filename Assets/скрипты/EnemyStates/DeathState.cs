@@ -8,24 +8,19 @@ public class DeathState : BaseState
 
         manager.GetComponent<EnemyDeathNotifier>()?.NotifyDeath();
 
+        if (manager.audioSource != null && manager.deathClip != null)
+        {
+            manager.audioSource.PlayOneShot(manager.deathClip);
+        }
+
         manager.animator.SetBool("isDead", true);
         manager.animator.SetBool("IsIdle", false);
         manager.animator.SetBool("IsPatrolling", false);
         manager.animator.SetBool("IsAgro", false);
         manager.animator.SetBool("IsAttack", false);
-
-
-        
-        //manager.GetComponent<Health>().onDeath.AddListener(() => Destroy(manager.gameObject));  
     }
 
-    public override void ExitState(EnemyStateManager manager)
-    {
-        
-    }
+    public override void ExitState(EnemyStateManager manager) { }
 
-    public override void UpdateState(EnemyStateManager manager)
-    {
-        
-    }
+    public override void UpdateState(EnemyStateManager manager) { }
 }
