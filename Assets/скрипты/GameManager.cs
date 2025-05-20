@@ -73,9 +73,9 @@ public class GameManager : MonoBehaviour
     private void ShowStats()
     {
         statsPanel.SetActive(true);
-        keysText.text = $"Keys: {keysCollected}/{keysToWin}";
-        killsText.text = $"Kills: {enemiesKilled}";
-        timeText.text = $"Time: {Mathf.FloorToInt(playTime / 60)}m {Mathf.FloorToInt(playTime % 60)}s";
+        keysText.text = $"KEYS: {keysCollected}/{keysToWin}";
+        killsText.text = $"KILLS: {enemiesKilled}";
+        timeText.text = $"TIME: {Mathf.FloorToInt(playTime / 60)}m {Mathf.FloorToInt(playTime % 60)}s";
     }
 
     public void ResetGame()
