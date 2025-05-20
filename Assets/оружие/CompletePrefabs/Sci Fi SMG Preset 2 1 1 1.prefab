@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunParticleSystems: []
-  bulletPrefab: {fileID: 8022568643572862970, guid: 6778160373b582d4fb9d61c652badfe9, type: 3}
+  bulletPrefab: {fileID: 6405774592469603278, guid: 91544868d9e924ce09a97955d4b4cc5d, type: 3}
   muzzleTransform: {fileID: 6610801365892389529}
   stats: {fileID: 11400000, guid: 19d6341936490e44db5ca0650279cf8a, type: 2}
   currentBulletCount: 0

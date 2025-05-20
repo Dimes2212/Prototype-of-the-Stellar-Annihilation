@@ -189,7 +189,7 @@ MonoBehaviour:
   maxAmmo: 10
   fireRate: 0.3
   firePoint: {fileID: 6637481572184836186}
-  bulletPrefab: {fileID: 4730750311488368324, guid: 06686364efd1143da8bd2237d06f25f8, type: 3}
+  bulletPrefab: {fileID: 616942847050277666, guid: 74d7b2e6e9e5c47b1980f743f915b998, type: 3}
   muzzleFlash: {fileID: 0}
   shotSound: {fileID: 0}
   shootAction:
