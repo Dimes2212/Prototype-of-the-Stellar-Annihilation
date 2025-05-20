@@ -26,20 +26,25 @@ public class PatrolState : BaseState
 
     public override void UpdateState(EnemyStateManager manager)
     {
+        if (!manager.navMeshAgent.isOnNavMesh)
+        {
+            Debug.LogWarning("NavMeshAgent не находится на NavMesh.");
+            return;
+        }
+
         float distanceToPlayer = Vector3.Distance(manager.transform.position, manager.GetPlayer().position);
 
-        
         if (distanceToPlayer < manager.agroDistance)
         {
             manager.SwitchState(manager.agroState);
             return;
         }
 
-        
         if (!manager.navMeshAgent.pathPending && manager.navMeshAgent.remainingDistance < 0.5f)
         {
             manager.currentPatrolIndex = (manager.currentPatrolIndex + 1) % manager.patrolPoints.Length;
             manager.SetDestination(manager.patrolPoints[manager.currentPatrolIndex]);
         }
     }
+
 }
