@@ -10,7 +10,7 @@ public class DeathMenuController : MonoBehaviour
     {
         if (playerHealth != null)
         {
-            // Телепорт в зону возрождения
+            
             Transform respawn = playerHealth.GetRespawnPoint();
             if (respawn != null)
             {
@@ -19,15 +19,15 @@ public class DeathMenuController : MonoBehaviour
                 player.transform.rotation = respawn.rotation;
             }
 
-            // Восстановление HP
+            
             playerHealth.RestoreHealth();
         }
 
-        // Скрытие меню, если требуется
+        
         if (deathMenuUI != null)
             deathMenuUI.SetActive(false);
 
-        // Продолжение игры
+        
         Time.timeScale = 1f;
     }
 
