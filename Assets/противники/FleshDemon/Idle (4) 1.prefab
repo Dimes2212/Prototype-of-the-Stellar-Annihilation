@@ -285,7 +285,10 @@ MonoBehaviour:
       m_Calls: []
   hologramText: {fileID: 0}
   rewardOnDeath: 100
-  deathSceneName: GameOver
+  enemyZoneCleaner: {fileID: 0}
+  deathZonePoint: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  deathMenuUI: {fileID: 0}
 --- !u!136 &7367175964476287770
 CapsuleCollider:
   m_ObjectHideFlags: 0

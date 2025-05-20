@@ -58272,6 +58272,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2057696494}
     - target: {fileID: 970303510967203854, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
+      propertyPath: _attackDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 970303510967203854, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
       propertyPath: 'attackZones.Array.data[0]'
       value: 
       objectReference: {fileID: 1962610978}
