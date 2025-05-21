@@ -5075,6 +5075,7 @@ GameObject:
   - component: {fileID: 224217890}
   - component: {fileID: 224217889}
   - component: {fileID: 224217892}
+  - component: {fileID: 224217893}
   m_Layer: 0
   m_Name: Button (4)
   m_TagString: Untagged
@@ -5212,6 +5213,27 @@ MonoBehaviour:
   itemPrefab: {fileID: 6829356446385065529, guid: e81ea98c4044671479cc3abbd5a9ce98, type: 3}
   spawnPoint: {fileID: 1229797769}
   uniqueTag: SMG
+--- !u!65 &224217893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224217887}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &225381547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39766,6 +39788,7 @@ GameObject:
   - component: {fileID: 1415092957}
   - component: {fileID: 1415092956}
   - component: {fileID: 1415092959}
+  - component: {fileID: 1415092960}
   m_Layer: 0
   m_Name: Button (6)
   m_TagString: Untagged
@@ -39903,6 +39926,27 @@ MonoBehaviour:
   itemPrefab: {fileID: 8197631910411027222, guid: b12f0e2f529e54ca3a491a79bdb0067d, type: 3}
   spawnPoint: {fileID: 1229797769}
   uniqueTag: PP
+--- !u!65 &1415092960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415092954}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1416272493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60182,6 +60226,7 @@ GameObject:
   - component: {fileID: 2118441728}
   - component: {fileID: 2118441727}
   - component: {fileID: 2118441726}
+  - component: {fileID: 2118441730}
   m_Layer: 0
   m_Name: Button (7)
   m_TagString: Untagged
@@ -60319,6 +60364,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118441724}
   m_CullTransparentMesh: 1
+--- !u!65 &2118441730
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118441724}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2120517886
 PrefabInstance:
   m_ObjectHideFlags: 0
