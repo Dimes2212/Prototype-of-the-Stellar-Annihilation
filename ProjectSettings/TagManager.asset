@@ -16,6 +16,8 @@ TagManager:
   - Dagger
   - Pause
   - Door
+  - Labzone
+  - LabZone
   layers:
   - Default
   - TransparentFX
