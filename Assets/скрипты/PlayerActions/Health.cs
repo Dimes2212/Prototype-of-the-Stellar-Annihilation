@@ -196,23 +196,40 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
+    [Header("Health Settings")]
     public float maxHealth = 100f;
     private float currentHealth;
+
+    [Header("Events")]
     public UnityEvent onDamage;
     public UnityEvent onDeath;
+
+    [Header("UI")]
     public TextMeshProUGUI hologramText;
     public int rewardOnDeath = 0;
 
+    [Header("Player Settings")]
     [SerializeField] private EnemyZoneCleaner enemyZoneCleaner;
     [SerializeField] private Transform deathZonePoint;
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private GameObject deathMenuUI;
 
+    [Header("Player Sound")]
+    [SerializeField] private AudioSource playerHurtSound;
+    [SerializeField, Range(0f, 1f)] private float playerHurtVolume = 1f;
+
+    [SerializeField, Range(0f, 1f)] private float enemyHurtVolume = 1f;
+    [Header("Enemy Sound")]
+    [SerializeField] private AudioSource enemyHurtSound;
+    
+
     private Animator animator;
     private SimpleEnemyStateManager simpleEnemyStateManager;
     private EnemyStateManager enemyStateManager;
+    private bool isInitialized = false;
 
     private bool isPlayer => animator == null && simpleEnemyStateManager == null && enemyStateManager == null;
+    private bool isEnemy => gameObject.CompareTag("Enemy");
 
     void Awake()
     {
@@ -220,19 +237,60 @@ public class Health : MonoBehaviour
         animator = GetComponent<Animator>();
         simpleEnemyStateManager = GetComponent<SimpleEnemyStateManager>();
         enemyStateManager = GetComponent<EnemyStateManager>();
+
+        // Настройка звуков
+        if (playerHurtSound != null)
+        {
+            playerHurtSound.playOnAwake = false;
+            playerHurtSound.volume = playerHurtVolume;
+        }
+
+        if (enemyHurtSound != null)
+        {
+            enemyHurtSound.playOnAwake = false;
+            enemyHurtSound.volume = enemyHurtVolume;
+        }
+
         UpdateHologram();
+        isInitialized = true;
     }
 
     public void TakeDamage(float amount)
     {
-        if (currentHealth <= 0) return;
+        if (currentHealth <= 0 || !isInitialized) return;
 
         currentHealth = Mathf.Max(currentHealth - amount, 0f);
         onDamage?.Invoke();
         UpdateHologram();
 
+        // Воспроизведение звука урона для игрока
+        if (isPlayer && playerHurtSound != null)
+        {
+            playerHurtSound.Play();
+        }
+        // Воспроизведение звука урона для врагов
+        else if (isEnemy && enemyHurtSound != null)
+        {
+            enemyHurtSound.Play();
+        }
+
         if (currentHealth <= 0)
             Die();
+    }
+
+    // Методы для изменения громкости из инспектора
+    public void SetPlayerHurtVolume(float volume)
+    {
+        playerHurtVolume = Mathf.Clamp01(volume);
+        if (playerHurtSound != null)
+            playerHurtSound.volume = playerHurtVolume;
+    }
+
+    public void SetEnemyHurtVolume(float volume)
+    {
+        enemyHurtVolume = Mathf.Clamp01(volume);
+        if (enemyHurtSound != null)
+            enemyHurtSound.volume = enemyHurtVolume;
     }
 
     public void Heal(float amount)
@@ -240,12 +298,6 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0) return;
 
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-        UpdateHologram();
-    }
-
-    public void RestoreHealth()
-    {
-        currentHealth = maxHealth;
         UpdateHologram();
     }
 
