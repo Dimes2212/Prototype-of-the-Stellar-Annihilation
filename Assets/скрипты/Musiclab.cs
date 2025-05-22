@@ -9,15 +9,20 @@ public class ZoneMusicController : MonoBehaviour
     public AudioClip musicOutsideZone; // Космос
     [Range(0.5f, 5f)] public float fadeDuration = 2f; // Длительность перехода
 
+    [Header("Volume Control")]
+    [Range(0f, 1f)] public float maxVolume = 1f; // Максимальная громкость
+    [Range(0f, 1f)] public float insideZoneVolume = 1f; // Громкость в лаборатории
+    [Range(0f, 1f)] public float outsideZoneVolume = 0.8f; // Громкость в космосе
+
     private bool isInsideZone;
     private Coroutine currentFade;
 
     void Start()
     {
-        // Начинаем с музыки лаборатории (по вашей версии)
+        // Начинаем с музыки лаборатории
         audioSource.clip = musicInsideZone;
         audioSource.loop = true;
-        audioSource.volume = 1f;
+        audioSource.volume = insideZoneVolume * maxVolume;
         audioSource.Play();
         isInsideZone = true;
     }
@@ -27,7 +32,8 @@ public class ZoneMusicController : MonoBehaviour
         if (other.CompareTag("Player") && !isInsideZone)
         {
             isInsideZone = true;
-            StartMusicTransition(musicInsideZone, "Вошел в зону - плавно включаем музыку лаборатории");
+            StartMusicTransition(musicInsideZone, insideZoneVolume * maxVolume,
+                "Вошел в зону - плавно включаем музыку лаборатории");
         }
     }
 
@@ -36,23 +42,23 @@ public class ZoneMusicController : MonoBehaviour
         if (other.CompareTag("Player") && isInsideZone)
         {
             isInsideZone = false;
-            StartMusicTransition(musicOutsideZone, "Вышел из зоны - плавно включаем космическую музыку");
+            StartMusicTransition(musicOutsideZone, outsideZoneVolume * maxVolume,
+                "Вышел из зоны - плавно включаем космическую музыку");
         }
     }
 
-    void StartMusicTransition(AudioClip newClip, string logMessage)
+    void StartMusicTransition(AudioClip newClip, float targetVolume, string logMessage)
     {
-        // Останавливаем предыдущий переход если был
         if (currentFade != null)
         {
             StopCoroutine(currentFade);
         }
 
         Debug.Log(logMessage);
-        currentFade = StartCoroutine(FadeMusic(newClip));
+        currentFade = StartCoroutine(FadeMusic(newClip, targetVolume));
     }
 
-    IEnumerator FadeMusic(AudioClip newClip)
+    IEnumerator FadeMusic(AudioClip newClip, float targetVolume)
     {
         float timer = 0f;
         float startVolume = audioSource.volume;
@@ -73,11 +79,20 @@ public class ZoneMusicController : MonoBehaviour
         timer = 0f;
         while (timer < fadeDuration)
         {
-            audioSource.volume = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            audioSource.volume = Mathf.Lerp(0f, targetVolume, timer / fadeDuration);
             timer += Time.deltaTime;
             yield return null;
         }
 
-        audioSource.volume = 1f; // Фиксируем полную громкость
+        audioSource.volume = targetVolume; // Фиксируем конечную громкость
+    }
+
+    // Метод для ручной настройки громкости из других скриптов
+    public void SetMaxVolume(float volume)
+    {
+        maxVolume = Mathf.Clamp01(volume);
+        audioSource.volume = isInsideZone ?
+            insideZoneVolume * maxVolume :
+            outsideZoneVolume * maxVolume;
     }
 }
