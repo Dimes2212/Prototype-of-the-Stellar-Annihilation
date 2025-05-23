@@ -218,10 +218,11 @@ public class Health : MonoBehaviour
     [SerializeField] private AudioSource playerHurtSound;
     [SerializeField, Range(0f, 1f)] private float playerHurtVolume = 1f;
 
-    [SerializeField, Range(0f, 1f)] private float enemyHurtVolume = 1f;
+    
     [Header("Enemy Sound")]
     [SerializeField] private AudioSource enemyHurtSound;
-    
+    [SerializeField, Range(0f, 2f)] private float enemyHurtVolume = 1f;
+
 
     private Animator animator;
     private SimpleEnemyStateManager simpleEnemyStateManager;
