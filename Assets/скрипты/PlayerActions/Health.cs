@@ -221,6 +221,7 @@ public class Health : MonoBehaviour
     
     [Header("Enemy Sound")]
     [SerializeField] private AudioSource enemyHurtSound;
+    [SerializeField] private AudioSource enemyDieSound;
     [SerializeField, Range(0f, 1f)] private float enemyHurtVolume = 1f;
 
 
@@ -315,12 +316,14 @@ public class Health : MonoBehaviour
 
         if (simpleEnemyStateManager != null)
         {
+            enemyDieSound.Play();
             simpleEnemyStateManager.Die();
             return;
         }
 
         if (enemyStateManager != null)
         {
+            enemyDieSound.Play();
             enemyStateManager.Die();
             return;
         }
