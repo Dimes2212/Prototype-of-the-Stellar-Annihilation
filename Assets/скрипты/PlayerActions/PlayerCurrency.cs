@@ -37,6 +37,6 @@ public class PlayerCurrency : MonoBehaviour
     private void UpdateUI()
     {
         if (currencyText != null)
-            currencyText.text = $"{currentCurrency}";
+            currencyText.text = $"{currentCurrency} $";
     }
 }

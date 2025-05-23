@@ -156,7 +156,7 @@ public class DoorHealth : MonoBehaviour
     {
         if (hologramText == null) return;
 
-        hologramText.text = $"Door HP: {Mathf.Ceil(currentHealth)}";
+        hologramText.text = $"{Mathf.Ceil(currentHealth)} HP";
         hologramText.color = currentHealth <= maxHealth * 0.3f ? Color.red : Color.white;
     }
 

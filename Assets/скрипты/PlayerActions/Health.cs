@@ -347,7 +347,7 @@ public class Health : MonoBehaviour
     {
         if (hologramText == null) return;
 
-        hologramText.text = $" {Mathf.Ceil(currentHealth)}";
+        hologramText.text = $" {Mathf.Ceil(currentHealth)} HP";
         hologramText.color = currentHealth <= maxHealth * 0.3f ? Color.red : Color.white;
     }
 
