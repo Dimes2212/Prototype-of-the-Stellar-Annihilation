@@ -347,6 +347,12 @@ public class Health : MonoBehaviour
         hologramText.color = currentHealth <= maxHealth * 0.3f ? Color.red : Color.white;
     }
 
+    public void RestoreHealth()
+    {
+        currentHealth = maxHealth;
+        UpdateHologram();
+    }
+
     public float GetHealth() => currentHealth;
     public float GetHealthNormalized() => currentHealth / maxHealth;
     public Transform GetRespawnPoint() => respawnPoint;
