@@ -127,6 +127,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (11)
@@ -195,6 +215,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11323,6 +11359,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (10)
@@ -11391,6 +11447,30 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: Priority
+      value: 143
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: DopplerLevel
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11725,6 +11805,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (5)
@@ -11793,6 +11893,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14368,8 +14484,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &573899034
 Animator:
   serializedVersion: 7
@@ -14454,8 +14570,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19569,8 +19685,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &731704676
 Animator:
   serializedVersion: 7
@@ -19655,8 +19771,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25412,8 +25528,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &930201929
 Animator:
   serializedVersion: 7
@@ -25498,8 +25614,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -26719,6 +26835,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (2)
@@ -26779,11 +26911,32 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+--- !u!82 &962915001 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+  m_PrefabInstance: {fileID: 962915000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &964130735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28350,8 +28503,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1002729981
 Animator:
   serializedVersion: 7
@@ -28436,8 +28589,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -30478,8 +30631,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1085821362
 Animator:
   serializedVersion: 7
@@ -30564,8 +30717,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -32389,8 +32542,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1143194651
 Animator:
   serializedVersion: 7
@@ -32487,8 +32640,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -33327,8 +33480,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1154727048
 Animator:
   serializedVersion: 7
@@ -33510,8 +33663,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -33694,6 +33847,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (4)
@@ -33762,6 +33935,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34043,6 +34232,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (8)
@@ -34111,6 +34320,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34238,6 +34463,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (13)
@@ -34306,6 +34551,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34593,8 +34854,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1191907478
 Animator:
   serializedVersion: 7
@@ -34691,8 +34952,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -36646,6 +36907,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (3)
@@ -36706,6 +36987,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37087,8 +37384,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1287516761
 Animator:
   serializedVersion: 7
@@ -37178,8 +37475,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -37271,6 +37568,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (12)
@@ -37339,6 +37656,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40856,8 +41189,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1389173900
 Animator:
   serializedVersion: 7
@@ -40947,8 +41280,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -42023,6 +42356,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (6)
@@ -42091,6 +42444,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -44955,8 +45324,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1515829052
 Animator:
   serializedVersion: 7
@@ -45046,8 +45415,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -49205,8 +49574,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1650278622
 Animator:
   serializedVersion: 7
@@ -49400,8 +49769,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -51580,8 +51949,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1710014095
 Animator:
   serializedVersion: 7
@@ -51666,8 +52035,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -52752,8 +53121,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1739648005
 Animator:
   serializedVersion: 7
@@ -52843,8 +53212,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -56046,6 +56415,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (9)
@@ -56114,6 +56503,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -56440,8 +56845,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1855499245
 Animator:
   serializedVersion: 7
@@ -56526,8 +56931,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -57826,8 +58231,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1900881257
 Animator:
   serializedVersion: 7
@@ -57929,8 +58334,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -59348,8 +59753,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &1937470092
 Animator:
   serializedVersion: 7
@@ -59434,8 +59839,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -61827,8 +62232,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 243361769}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
   enemyHurtSound: {fileID: 0}
+  enemyHurtVolume: 1
 --- !u!114 &2027501695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64132,6 +64537,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (7)
@@ -64200,6 +64625,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Volume
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+    - target: {fileID: 2806938254610126421, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -64499,8 +64940,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
-  enemyHurtVolume: 1
-  enemyHurtSound: {fileID: 0}
+  enemyHurtSound: {fileID: 962915001}
+  enemyHurtVolume: 0.14
 --- !u!95 &2132241211
 Animator:
   serializedVersion: 7
@@ -64585,8 +65026,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
   m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -64879,6 +65320,26 @@ PrefabInstance:
       propertyPath: 'attackZones.Array.data[1]'
       value: 
       objectReference: {fileID: 1571146583}
+    - target: {fileID: 3811272985433264766, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
+      propertyPath: enemyHurtSound
+      value: 
+      objectReference: {fileID: 962915001}
+    - target: {fileID: 3811272985433264766, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
+      propertyPath: enemyHurtVolume
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811272985433264766, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
+      propertyPath: maxHearDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811272985433264766, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
+      propertyPath: enemyMaxHearDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811272985433264766, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
+      propertyPath: enemyMinHearDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8340964794087733534, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
       propertyPath: m_Name
       value: Idle (4)
@@ -64948,10 +65409,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6d495625bf30dd141b201138d9930fc5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
