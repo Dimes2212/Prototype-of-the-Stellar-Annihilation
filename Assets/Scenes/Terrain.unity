@@ -14366,8 +14366,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &573899034
 Animator:
   serializedVersion: 7
@@ -19427,8 +19425,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &731704676
 Animator:
   serializedVersion: 7
@@ -25268,8 +25264,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &930201929
 Animator:
   serializedVersion: 7
@@ -28204,8 +28198,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1002729981
 Animator:
   serializedVersion: 7
@@ -30330,8 +30322,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1085821362
 Animator:
   serializedVersion: 7
@@ -32239,8 +32229,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1143194651
 Animator:
   serializedVersion: 7
@@ -33175,8 +33163,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1154727048
 Animator:
   serializedVersion: 7
@@ -34439,8 +34425,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1191907478
 Animator:
   serializedVersion: 7
@@ -36931,8 +36915,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1287516761
 Animator:
   serializedVersion: 7
@@ -40698,8 +40680,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1389173900
 Animator:
   serializedVersion: 7
@@ -44795,8 +44775,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1515829052
 Animator:
   serializedVersion: 7
@@ -49043,8 +49021,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1650278622
 Animator:
   serializedVersion: 7
@@ -51280,8 +51256,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1710014095
 Animator:
   serializedVersion: 7
@@ -52450,8 +52424,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1739648005
 Animator:
   serializedVersion: 7
@@ -56136,8 +56108,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1855499245
 Animator:
   serializedVersion: 7
@@ -57520,8 +57490,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1900881257
 Animator:
   serializedVersion: 7
@@ -59040,8 +59008,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &1937470092
 Animator:
   serializedVersion: 7
@@ -61517,8 +61483,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 1455454842}
   respawnPoint: {fileID: 1247681468}
   deathMenuUI: {fileID: 243361769}
-  playerHurtSound: {fileID: 271517911}
-  enemyHurtSound: {fileID: 0}
 --- !u!114 &2027501695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64180,8 +64144,6 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
-  playerHurtSound: {fileID: 0}
-  enemyHurtSound: {fileID: 0}
 --- !u!95 &2132241211
 Animator:
   serializedVersion: 7
@@ -64733,7 +64695,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.1
   m_Height: 1
