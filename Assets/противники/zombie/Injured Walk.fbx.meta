@@ -54,7 +54,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.081518546
+        functionName: IdleSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 44c9a37ca67c4894a9cb8c7bd34f6a88, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5778972
+        functionName: IdleSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 44c9a37ca67c4894a9cb8c7bd34f6a88, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

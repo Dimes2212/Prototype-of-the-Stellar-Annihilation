@@ -1,3 +1,4 @@
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
@@ -9,6 +10,12 @@ public class SimpleEnemyStateManager : MonoBehaviour
     public DoorAgroState doorAgroState = new DoorAgroState();
     public DoorAttackState doorAttackState = new DoorAttackState();
     public DoorDeathState doorDeathState = new DoorDeathState();
+
+    [Header("Enemy2 Sound")]
+    [SerializeField] private AudioSource enemyAttackSound;
+ 
+    [SerializeField] private AudioSource enemyidleSound;
+ 
 
     public Animator animator;
     public NavMeshAgent navMeshAgent;
@@ -53,6 +60,24 @@ public class SimpleEnemyStateManager : MonoBehaviour
         currentState?.OnExit(this);
         currentState = newState;
         currentState.OnEnter(this);
+    
+    }
+    public void IdleSound()
+    {
+        if (currentState == doorIdleState ||  currentState == doorAgroState)
+        {
+            enemyidleSound.Play();
+
+        }
+    }
+
+        public void AttackSound2()
+    {
+        if (currentState == doorAttackState)
+        {
+            enemyAttackSound.Play();
+
+        }
     }
 
     public void Die()
