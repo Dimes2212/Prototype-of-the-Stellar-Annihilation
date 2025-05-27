@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8669d5bae484c9b831d26341e08148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 10
-  fireRate: 0.3
+  maxAmmo: 10000000
+  fireRate: 1.2
   firePoint: {fileID: 6637481572184836186}
   bulletPrefab: {fileID: 616942847050277666, guid: 74d7b2e6e9e5c47b1980f743f915b998, type: 3}
   muzzleFlash: {fileID: 0}

@@ -77,14 +77,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 3137622209715054063}
-  bulletPrefab: {fileID: 4730750311488368324, guid: 06686364efd1143da8bd2237d06f25f8, type: 3}
-  shootInterval: 1
+  bulletPrefab: {fileID: 6405774592469603278, guid: 91544868d9e924ce09a97955d4b4cc5d, type: 3}
+  shootInterval: 2
   detectionRange: 15
   targetTag: Enemy
   rotatingPart: {fileID: 1067130512545427638}
-  ignoreVisionLayers:
-    serializedVersion: 2
-    m_Bits: 64
+  rotationSpeed: 5
 --- !u!1 &1585391546180044918
 GameObject:
   m_ObjectHideFlags: 0
