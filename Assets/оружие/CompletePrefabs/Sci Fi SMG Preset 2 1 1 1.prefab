@@ -522,6 +522,22 @@ MonoBehaviour:
         m_Groups: 
         m_Action: Shoot
         m_Flags: 0
+      - m_Name: 
+        m_Id: 4cac9150-ce53-4c18-b256-1844ad2c0cfd
+        m_Path: <OculusTouchController>{RightHand}/triggerPressed
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Shoot
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 085db978-a78e-4d9b-8929-20d5622731a8
+        m_Path: <OculusTouchController>{RightHand}/triggerTouched
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Shoot
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
   reloadAction:
