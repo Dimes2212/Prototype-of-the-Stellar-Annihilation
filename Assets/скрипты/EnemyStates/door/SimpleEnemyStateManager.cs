@@ -62,23 +62,23 @@ public class SimpleEnemyStateManager : MonoBehaviour
         currentState.OnEnter(this);
     
     }
-    public void IdleSound()
-    {
-        if (currentState == doorIdleState ||  currentState == doorAgroState)
-        {
-            enemyidleSound.Play();
+    //public void IdleSound()
+    //{
+    //    if (currentState == doorAgroState)
+    //    {
+    //        enemyidleSound.Play();
 
-        }
-    }
+    //    }
+    //}
 
-        public void AttackSound2()
-    {
-        if (currentState == doorAttackState)
-        {
-            enemyAttackSound.Play();
+    //    public void AttackSound2()
+    //{
+    //    if (currentState == doorAttackState)
+    //    {
+    //        enemyAttackSound.Play();
 
-        }
-    }
+    //    }
+    //}
 
     public void Die()
     {
