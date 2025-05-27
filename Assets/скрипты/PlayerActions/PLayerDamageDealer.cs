@@ -9,11 +9,27 @@ public class PlayerDamageDealer : MonoBehaviour
     private bool canDealDamage = true;
     private void OnTriggerEnter(Collider other)
     {
+        Health health = other.GetComponent<Health>();
+
+        if (other.CompareTag("Enemy")&& health != null)
+        {
+            // Загрузка префаба по имени (без расширения!)
+            GameObject bloodEffectPrefab = Resources.Load<GameObject>("BloodSprayFX");
+
+            if (bloodEffectPrefab != null)
+            {
+                Instantiate(bloodEffectPrefab, other.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Debug.LogError("Префаб BloodEffect не найден в папке Resources!");
+            }
+        }
         if (!canDealDamage || !other.CompareTag(targetTag)) return;
 
-        Health health = other.GetComponent<Health>();
         if (health != null)
         {
+
             health.TakeDamage(damageAmount);
             StartCoroutine(DamageCooldown());
         }

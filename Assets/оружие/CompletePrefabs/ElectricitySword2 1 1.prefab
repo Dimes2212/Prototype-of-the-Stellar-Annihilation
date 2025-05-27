@@ -578,6 +578,7 @@ MonoBehaviour:
   damageAmount: 10
   targetTag: Enemy
   damageCooldown: 0.5
+  bloodEffectPrefab: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
 --- !u!54 &1288755009858149904
 Rigidbody:
   m_ObjectHideFlags: 0
