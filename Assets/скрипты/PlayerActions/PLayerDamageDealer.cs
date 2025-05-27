@@ -7,18 +7,32 @@ public class PlayerDamageDealer : MonoBehaviour
     public float damageCooldown = 0.5f;
 
     private bool canDealDamage = true;
+
     private void OnTriggerEnter(Collider other)
     {
         Health health = other.GetComponent<Health>();
 
-        if (other.CompareTag("Enemy")&& health != null)
+        if (other.CompareTag("Enemy") && health != null)
         {
             // Загрузка префаба по имени (без расширения!)
             GameObject bloodEffectPrefab = Resources.Load<GameObject>("BloodSprayFX");
 
             if (bloodEffectPrefab != null)
             {
-                Instantiate(bloodEffectPrefab, other.transform.position, Quaternion.identity);
+                // Найти дочерний объект для спавна эффекта (например, "BloodPoint")
+                Transform bloodPoint = other.transform.Find("BloodPoint");
+                Transform spawnPoint = bloodPoint != null ? bloodPoint : other.transform;
+
+                // Инстанцировать эффект как дочерний объект
+                GameObject bloodEffect = Instantiate(
+                    bloodEffectPrefab,
+                    spawnPoint.position,
+                    Quaternion.identity,
+                    spawnPoint // сделать дочерним spawnPoint
+                ); // [1]
+
+                // Удалить эффект через 1 секунду
+                Destroy(bloodEffect, 1f); // [2]
             }
             else
             {
@@ -29,11 +43,11 @@ public class PlayerDamageDealer : MonoBehaviour
 
         if (health != null)
         {
-
             health.TakeDamage(damageAmount);
             StartCoroutine(DamageCooldown());
         }
     }
+
     private System.Collections.IEnumerator DamageCooldown()
     {
         canDealDamage = false;

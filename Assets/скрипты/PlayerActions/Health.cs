@@ -302,6 +302,10 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         UpdateHologram();
     }
+    public bool IsAlive()
+    {
+        return currentHealth > 0;
+    }
 
     void Die()
     {
