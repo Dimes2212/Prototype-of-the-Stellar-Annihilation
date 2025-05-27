@@ -498,8 +498,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8669d5bae484c9b831d26341e08148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmmo: 10
-  fireRate: 0.3
+  maxAmmo: 10000000
+  fireRate: 0.6
   firePoint: {fileID: 3329080588969257061}
   bulletPrefab: {fileID: 4730750311488368324, guid: 06686364efd1143da8bd2237d06f25f8, type: 3}
   muzzleFlash: {fileID: 0}
@@ -517,6 +517,22 @@ MonoBehaviour:
       - m_Name: 
         m_Id: c124ad22-0d2b-4de4-a6b8-f45ee33ddc0e
         m_Path: <Mouse>/leftButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Shoot
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 4cac9150-ce53-4c18-b256-1844ad2c0cfd
+        m_Path: <OculusTouchController>{RightHand}/triggerPressed
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Shoot
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 085db978-a78e-4d9b-8929-20d5622731a8
+        m_Path: <OculusTouchController>{RightHand}/triggerTouched
         m_Interactions: 
         m_Processors: 
         m_Groups: 

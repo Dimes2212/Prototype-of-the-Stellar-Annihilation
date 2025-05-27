@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1448bc0dc62a420baa1d04b595ab3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
+  damageAmount: 20
   targetTag: Enemy
   damageCooldown: 0.5
 --- !u!114 &2105092282452135522
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a29e25b4c9cc434987aed98f99f8e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   lifetime: 5
 --- !u!136 &6757588076075970352
 CapsuleCollider:
