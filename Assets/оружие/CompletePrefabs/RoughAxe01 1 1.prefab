@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 237212779557411406}
   - component: {fileID: 6147085844240897309}
   - component: {fileID: 7182582797527641966}
+  - component: {fileID: -436209847530132574}
   m_Layer: 0
   m_Name: RoughAxe01 1 1
   m_TagString: Axe
@@ -337,6 +338,18 @@ MonoBehaviour:
   damageAmount: 30
   targetTag: Enemy
   damageCooldown: 1
+--- !u!114 &-436209847530132574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099341566446092044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d247d34c889f4fdcb790f4ca4db9dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8874999197997482426
 GameObject:
   m_ObjectHideFlags: 0

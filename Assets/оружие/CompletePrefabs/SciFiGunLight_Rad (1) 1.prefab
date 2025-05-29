@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 4969582520676459550}
   - component: {fileID: 4084093988624438451}
   - component: {fileID: 7335281477715113680}
+  - component: {fileID: -3129346209872803205}
   m_Layer: 0
   m_Name: SciFiGunLight_Rad (1) 1
   m_TagString: PP
@@ -449,3 +450,15 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+--- !u!114 &-3129346209872803205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197631910411027222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d247d34c889f4fdcb790f4ca4db9dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

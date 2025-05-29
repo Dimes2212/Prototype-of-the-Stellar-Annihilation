@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 3941070960286187735}
   - component: {fileID: 3494792510242658673}
   - component: {fileID: 2684424038642970871}
+  - component: {fileID: -167826348429263926}
   m_Layer: 0
   m_Name: RoughDagger02_Red 1 1
   m_TagString: Dagger
@@ -368,3 +369,15 @@ MonoBehaviour:
   damageAmount: 25
   targetTag: Enemy
   damageCooldown: 1
+--- !u!114 &-167826348429263926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701660683511227603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d247d34c889f4fdcb790f4ca4db9dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
