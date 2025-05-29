@@ -10844,6 +10844,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8877177980677234388, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877177980677234388, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -65421,6 +65425,8 @@ MonoBehaviour:
   floorLayer:
     serializedVersion: 2
     m_Bits: 512
+  checkHeight: 1.8
+  maxCheckDistance: 0.5
 --- !u!82 &1859909340
 AudioSource:
   m_ObjectHideFlags: 0
