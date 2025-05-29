@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 2093775190299196064}
   - component: {fileID: 6794575859157463642}
   - component: {fileID: 5605537490981123973}
+  - component: {fileID: -4478644764847432420}
   m_Layer: 0
   m_Name: Sci Fi SMG Preset 2 1 1 1
   m_TagString: SMG
@@ -585,3 +586,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16838074, y: 0.43220472, z: 1.643219}
   m_Center: {x: -0.0047302246, y: 0.1862747, z: 0.1158905}
+--- !u!114 &-4478644764847432420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6829356446385065529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d247d34c889f4fdcb790f4ca4db9dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
