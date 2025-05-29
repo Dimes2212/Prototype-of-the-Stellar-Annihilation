@@ -37869,7 +37869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_TagString
@@ -74388,11 +74388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367175964476287770, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
       propertyPath: m_Radius
-      value: 0.207222
+      value: 0.21240236
       objectReference: {fileID: 0}
     - target: {fileID: 7367175964476287770, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
       propertyPath: m_Center.x
-      value: -0.036613468
+      value: -0.041793827
       objectReference: {fileID: 0}
     - target: {fileID: 7367175964476287770, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
       propertyPath: m_Center.z
@@ -74465,6 +74465,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8340964794087733534, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8563547090605889381}
+    - targetCorrespondingSourceObject: {fileID: 8340964794087733534, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8563547090605889382}
   m_SourcePrefab: {fileID: 100100000, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
 --- !u!82 &8563547090605889345
 AudioSource:
@@ -74580,12 +74583,12 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
-  m_Height: 1
+  m_Radius: 0.11678315
+  m_Height: 1.0000001
   m_Direction: 1
-  m_Center: {x: 0, y: 1.09, z: 0}
+  m_Center: {x: -0.009803773, y: 1.09, z: -0.011040495}
 --- !u!82 &8563547090605889363
 AudioSource:
   m_ObjectHideFlags: 0
@@ -74877,6 +74880,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8563547090605889382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062583979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7288a4e284b7943308346971b99affc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
