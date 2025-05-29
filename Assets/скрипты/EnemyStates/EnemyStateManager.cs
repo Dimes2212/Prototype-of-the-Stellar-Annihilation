@@ -103,9 +103,8 @@ public class EnemyStateManager : MonoBehaviour
     [SerializeField] public float attackDistance;
     [SerializeField] public Transform[] patrolPoints;
 
-    [Header("Enemy Sound")]
-    [SerializeField] private AudioSource enemyAttackSound;
-    [SerializeField, Range(0f, 1f)] private float enemyAttackVolume = 1f;
+   
+
     [SerializeField] private AudioSource enemyidleSound;
     [SerializeField, Range(0f, 1f)] private float enemyidleVolume = 1f;
 
@@ -175,14 +174,7 @@ public class EnemyStateManager : MonoBehaviour
             return;
         }
     }
-    public void AttackSound()
-    {
-        if (currentState == attackState)
-        {
-            enemyAttackSound.Play();
-            
-        }
-    }
+    
     public void IdleSound()
     {
         if (currentState == agroState)

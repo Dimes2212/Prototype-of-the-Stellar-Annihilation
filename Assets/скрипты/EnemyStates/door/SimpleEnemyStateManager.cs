@@ -12,7 +12,7 @@ public class SimpleEnemyStateManager : MonoBehaviour
     public DoorDeathState doorDeathState = new DoorDeathState();
 
     [Header("Enemy2 Sound")]
-    [SerializeField] private AudioSource enemyAttackSound;
+    
  
     [SerializeField] private AudioSource enemyidleSound;
  

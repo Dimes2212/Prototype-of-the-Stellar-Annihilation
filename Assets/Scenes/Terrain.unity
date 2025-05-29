@@ -9640,8 +9640,6 @@ MonoBehaviour:
   agroDistance: 6
   attackDistance: 2
   patrolPoints: []
-  enemyAttackSound: {fileID: 0}
-  enemyAttackVolume: 1
   enemyidleSound: {fileID: 0}
   enemyidleVolume: 1
   audioSource: {fileID: 0}
@@ -10901,6 +10899,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2027501707}
+    - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2027501708}
     - targetCorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 675415784}
@@ -15844,6 +15845,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 1
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -15891,8 +15894,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1773955642}
   - {fileID: 1592050546}
-  enemyAttackSound: {fileID: 573899039}
-  enemyAttackVolume: 0.405
   enemyidleSound: {fileID: 573899040}
   enemyidleVolume: 0.068
   audioSource: {fileID: 0}
@@ -21491,6 +21492,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 1
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -21538,8 +21541,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 103687552}
   - {fileID: 1170858238}
-  enemyAttackSound: {fileID: 573899039}
-  enemyAttackVolume: 0.405
   enemyidleSound: {fileID: 573899040}
   enemyidleVolume: 0.068
   audioSource: {fileID: 0}
@@ -27721,6 +27722,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -27768,8 +27771,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 747231701}
   - {fileID: 73807523}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -28007,7 +28008,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.136
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -30979,6 +30980,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -31026,8 +31029,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1916839221}
   - {fileID: 1625003517}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -31265,7 +31266,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -33578,6 +33579,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -33625,8 +33628,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 584179192}
   - {fileID: 287214312}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 1
   audioSource: {fileID: 0}
@@ -33864,7 +33865,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -36347,6 +36348,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -36394,8 +36397,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1173369813}
   - {fileID: 806462632}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -36633,7 +36634,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -38820,6 +38821,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -38867,8 +38870,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -39118,7 +39119,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -42074,6 +42075,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -42121,8 +42124,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1364188573}
   - {fileID: 1392294751}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -42365,7 +42366,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -46617,6 +46618,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -46664,8 +46667,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1135569318}
   - {fileID: 1931348182}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -46908,7 +46909,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -51510,6 +51511,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -51557,8 +51560,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1985978907}
   - {fileID: 1785374360}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -51801,7 +51802,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -56140,6 +56141,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -56187,8 +56190,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1890087800}
   - {fileID: 120983457}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -56438,7 +56439,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -59080,6 +59081,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -59127,8 +59130,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 813443812}
   - {fileID: 1715906038}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -59366,7 +59367,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -60565,6 +60566,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -60612,8 +60615,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 432134605}
   - {fileID: 425713740}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -60856,7 +60857,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -64953,6 +64954,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -65000,8 +65003,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 985561453}
   - {fileID: 1445958751}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -65239,7 +65240,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -66507,6 +66508,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -66554,8 +66557,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1006504279}
   - {fileID: 392970282}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -66810,7 +66811,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -68377,6 +68378,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -68424,8 +68427,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 985561247}
   - {fileID: 708259423}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -68663,7 +68664,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -71149,6 +71150,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 243361769}
   playerHurtSound: {fileID: 2027501707}
   playerHurtVolume: 0.148
+  EnemyAttack: {fileID: 2027501708}
+  EnemyAttackVolume: 0.201
   enemyHurtSound: {fileID: 0}
   enemyDieSound: {fileID: 0}
   enemyHurtVolume: 1
@@ -71203,7 +71206,104 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 0546fb9c8bd221a4d825ab0066ff4fa5, type: 3}
   m_Resource: {fileID: 8300000, guid: 0546fb9c8bd221a4d825ab0066ff4fa5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.025
+  m_Volume: 0.166
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &2027501708
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304387210}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f8b91fd25725501499254ba778aa3949, type: 3}
+  m_Resource: {fileID: 8300000, guid: f8b91fd25725501499254ba778aa3949, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.142
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -74329,6 +74429,8 @@ MonoBehaviour:
   deathMenuUI: {fileID: 0}
   playerHurtSound: {fileID: 0}
   playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 0.219
   enemyHurtSound: {fileID: 962915001}
   enemyDieSound: {fileID: 524201935}
   enemyHurtVolume: 0.14
@@ -74376,8 +74478,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1885298501}
   - {fileID: 1500882136}
-  enemyAttackSound: {fileID: 930201934}
-  enemyAttackVolume: 0.456
   enemyidleSound: {fileID: 930201935}
   enemyidleVolume: 0.086
   audioSource: {fileID: 0}
@@ -74615,7 +74715,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_Resource: {fileID: 8300000, guid: f5ee46fe00ecc1e47bb68eec27f3237d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.383
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0

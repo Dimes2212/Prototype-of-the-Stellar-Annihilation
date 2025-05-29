@@ -217,13 +217,15 @@ public class Health : MonoBehaviour
     [Header("Player Sound")]
     [SerializeField] private AudioSource playerHurtSound;
     [SerializeField, Range(0f, 1f)] private float playerHurtVolume = 1f;
+    [SerializeField] private AudioSource EnemyAttack;
+    [SerializeField, Range(0f, 1f)] private float EnemyAttackVolume = 1f;
 
-    
+
     [Header("Enemy Sound")]
     [SerializeField] private AudioSource enemyHurtSound;
     [SerializeField] private AudioSource enemyDieSound;
     [SerializeField, Range(0f, 1f)] private float enemyHurtVolume = 1f;
-
+   
 
     private Animator animator;
     private SimpleEnemyStateManager simpleEnemyStateManager;
@@ -266,8 +268,9 @@ public class Health : MonoBehaviour
         UpdateHologram();
 
         // Воспроизведение звука урона для игрока
-        if (isPlayer && playerHurtSound != null)
+        if (isPlayer && playerHurtSound != null && EnemyAttack!=null)
         {
+            EnemyAttack.Play();
             playerHurtSound.Play();
         }
         // Воспроизведение звука урона для врагов
