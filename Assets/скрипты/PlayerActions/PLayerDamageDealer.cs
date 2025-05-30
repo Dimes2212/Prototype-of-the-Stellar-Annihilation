@@ -5,6 +5,8 @@ public class PlayerDamageDealer : MonoBehaviour
     public float damageAmount = 10f;
     public string targetTag = "Enemy";
     public float damageCooldown = 0.5f;
+    [SerializeField] private AudioSource Weaponsound;
+   
 
     private bool canDealDamage = true;
 
@@ -43,6 +45,7 @@ public class PlayerDamageDealer : MonoBehaviour
 
         if (health != null)
         {
+            Weaponsound.Play();
             health.TakeDamage(damageAmount);
             StartCoroutine(DamageCooldown());
         }

@@ -5823,7 +5823,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   m_Resource: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.634
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5919,7 +5919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaf7f5459fcf49faa62ec178619d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   collectEffect: {fileID: 0}
 --- !u!65 &222549561
 BoxCollider:
@@ -15070,7 +15070,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   m_Resource: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.634
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -15166,7 +15166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaf7f5459fcf49faa62ec178619d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   collectEffect: {fileID: 0}
 --- !u!65 &544915430
 BoxCollider:
@@ -18469,7 +18469,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -26157,7 +26157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 25
-  healSound: {fileID: 0}
+  healSound: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   healEffect: {fileID: 0}
 --- !u!1 &874108847
 GameObject:
@@ -27475,7 +27475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 25
-  healSound: {fileID: 0}
+  healSound: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   healEffect: {fileID: 0}
 --- !u!1 &913278392 stripped
 GameObject:
@@ -42826,7 +42826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 25
-  healSound: {fileID: 0}
+  healSound: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   healEffect: {fileID: 0}
 --- !u!4 &1252732273 stripped
 Transform:
@@ -45131,7 +45131,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   m_Resource: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.634
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -45227,7 +45227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaf7f5459fcf49faa62ec178619d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   collectEffect: {fileID: 0}
 --- !u!65 &1299692294
 BoxCollider:
@@ -51270,7 +51270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 25
-  healSound: {fileID: 0}
+  healSound: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   healEffect: {fileID: 0}
 --- !u!1 &1442233386
 GameObject:
@@ -53009,7 +53009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaf7f5459fcf49faa62ec178619d5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   collectEffect: {fileID: 0}
 --- !u!82 &1502987102
 AudioSource:
@@ -53024,7 +53024,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   m_Resource: {fileID: 8300000, guid: a45b8bb802bb7446ba2eea85118736ac, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.634
   m_Pitch: 1
   Loop: 0
   Mute: 0
