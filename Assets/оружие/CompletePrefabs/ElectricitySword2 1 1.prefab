@@ -580,7 +580,10 @@ MonoBehaviour:
   damageAmount: 40
   targetTag: Enemy
   damageCooldown: 1
-  Weaponsound: {fileID: 6881920309924656782}
+  weaponSound: {fileID: 6881920309924656782}
+  bloodEffectPrefab: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
+  effectDuration: 1
+  spawnEffectOnWeapon: 1
 --- !u!54 &1288755009858149904
 Rigidbody:
   m_ObjectHideFlags: 0
