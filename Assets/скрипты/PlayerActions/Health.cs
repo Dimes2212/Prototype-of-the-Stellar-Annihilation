@@ -316,6 +316,7 @@ public class Health : MonoBehaviour
 
         if (animator != null)
         {
+
             animator.Play("Death", -1, 0f);
             animator.ResetTrigger("Die");
             animator.SetTrigger("Die");
@@ -323,9 +324,13 @@ public class Health : MonoBehaviour
 
         if (simpleEnemyStateManager != null)
         {
+            
             enemyDieSound.Play();
             simpleEnemyStateManager.Die();
+            
             return;
+
+            
         }
 
         if (enemyStateManager != null)
