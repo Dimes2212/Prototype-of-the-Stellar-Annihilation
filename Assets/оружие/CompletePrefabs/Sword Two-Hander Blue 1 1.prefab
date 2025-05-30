@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 5589113130546709720}
   - component: {fileID: 308321977768443474}
   - component: {fileID: 4623619032244845146}
+  - component: {fileID: 4447685286676797147}
   - component: {fileID: -7833217696623729942}
   m_Layer: 0
   m_Name: Sword Two-Hander Blue 1 1
@@ -316,6 +317,18 @@ MonoBehaviour:
   targetTag: Enemy
   damageCooldown: 1
   Weaponsound: {fileID: -7833217696623729942}
+--- !u!114 &4447685286676797147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8192698658303871316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d247d34c889f4fdcb790f4ca4db9dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &-7833217696623729942
 AudioSource:
   m_ObjectHideFlags: 0
