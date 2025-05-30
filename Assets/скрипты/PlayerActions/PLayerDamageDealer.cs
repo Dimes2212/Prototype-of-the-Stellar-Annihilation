@@ -2,45 +2,50 @@ using UnityEngine;
 
 public class PlayerDamageDealer : MonoBehaviour
 {
-    [Header("Damage Settings")]
     public float damageAmount = 10f;
     public string targetTag = "Enemy";
     public float damageCooldown = 0.5f;
-
-    [Header("Effects")]
-    [SerializeField] private AudioSource weaponSound;
-    [SerializeField] private GameObject bloodEffectPrefab;
-    [SerializeField] private float effectDuration = 1f;
-    [SerializeField] private bool spawnEffectOnWeapon = false; // Для меча = true, для пули = false
+    [SerializeField] private AudioSource Weaponsound;
+   
 
     private bool canDealDamage = true;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(targetTag)) return;
-
-        // -- Эффект крови --
-        if (bloodEffectPrefab != null)
-        {
-            Vector3 spawnPosition = spawnEffectOnWeapon
-                ? transform.position                          // Для меча: на оружии
-                : other.ClosestPoint(transform.position);     // Для пули: точка контакта
-
-            GameObject effect = Instantiate(
-                bloodEffectPrefab,
-                spawnPosition,
-                Quaternion.LookRotation(transform.forward)    // Направление эффекта
-            );
-
-            Destroy(effect, effectDuration);
-        }
-
-        // -- Урон --
         Health health = other.GetComponent<Health>();
-        if (!canDealDamage || health == null) return;
+
+        if (other.CompareTag("Enemy") && health != null)
+        {
+            // Загрузка префаба по имени (без расширения!)
+            GameObject bloodEffectPrefab = Resources.Load<GameObject>("BloodSprayFX");
+
+            if (bloodEffectPrefab != null)
+            {
+                // Найти дочерний объект для спавна эффекта (например, "BloodPoint")
+                Transform bloodPoint = other.transform.Find("BloodPoint");
+                Transform spawnPoint = bloodPoint != null ? bloodPoint : other.transform;
+
+                // Инстанцировать эффект как дочерний объект
+                GameObject bloodEffect = Instantiate(
+                    bloodEffectPrefab,
+                    spawnPoint.position,
+                    Quaternion.identity,
+                    spawnPoint // сделать дочерним spawnPoint
+                ); // [1]
+
+                // Удалить эффект через 1 секунду
+                Destroy(bloodEffect, 1f); // [2]
+            }
+            else
+            {
+                Debug.LogError("Префаб BloodEffect не найден в папке Resources!");
+            }
+        }
+        if (!canDealDamage || !other.CompareTag(targetTag)) return;
+
         if (health != null)
         {
-            weaponSound.Play();
+            Weaponsound.Play();
             health.TakeDamage(damageAmount);
             StartCoroutine(DamageCooldown());
         }

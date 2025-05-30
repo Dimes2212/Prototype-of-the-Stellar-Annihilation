@@ -125,10 +125,7 @@ MonoBehaviour:
   damageAmount: 5
   targetTag: Enemy
   damageCooldown: 0.5
-  weaponSound: {fileID: 0}
-  bloodEffectPrefab: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
-  effectDuration: 1
-  spawnEffectOnWeapon: 0
+  Weaponsound: {fileID: 5227121493740940094}
 --- !u!114 &4329767020698579039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  lifetime: 10
+  lifetime: 5
 --- !u!136 &2282938312993118638
 CapsuleCollider:
   m_ObjectHideFlags: 0
