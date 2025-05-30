@@ -330,12 +330,19 @@ public class Health : MonoBehaviour
 
         if (enemyStateManager != null)
         {
+            Collider[] allColliders = GetComponents<Collider>();
+            foreach (Collider col in allColliders)
+            {
+                col.enabled = false;
+            }
             enemyDieSound.Play();
             enemyStateManager.Die();
             return;
         }
-
-        if (isPlayer && deathZonePoint != null)
+        
+            
+            
+            if (isPlayer && deathZonePoint != null)
         {
             transform.position = deathZonePoint.position;
             transform.rotation = deathZonePoint.rotation;
