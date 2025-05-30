@@ -1,81 +1,3 @@
-//using UnityEngine;
-
-//public class DoorHealth : MonoBehaviour
-//{
-//    [SerializeField] private int maxHealth = 100;
-//    [SerializeField] private GameObject destructionEffect;
-//    [SerializeField] private AudioClip hitSound;
-//    [SerializeField] private AudioClip destroySound;
-
-//    private int currentHealth;
-//    private bool isDead = false;
-//    private AudioSource audioSource;
-
-//    public int CurrentHealth => currentHealth;
-//    public bool IsDead => isDead;
-
-//    private void Awake()
-//    {
-//        currentHealth = maxHealth;
-//        audioSource = GetComponent<AudioSource>();
-//        if (audioSource == null)
-//        {
-//            audioSource = gameObject.AddComponent<AudioSource>();
-//        }
-//    }
-
-//    public void TakeDamage(int damage)
-//    {
-//        if (isDead) return;
-
-//        currentHealth -= damage;
-//        PlaySound(hitSound);
-
-//        Debug.Log($"Door took {damage} damage. Remaining health: {currentHealth}");
-
-//        if (currentHealth <= 0)
-//        {
-//            Die();
-//        }
-//    }
-
-//    private void Die()
-//    {
-//        isDead = true;
-//        PlaySound(destroySound);
-
-//        if (destructionEffect != null)
-//        {
-//            Instantiate(destructionEffect, transform.position, transform.rotation);
-//        }
-
-//        // Отключаем коллайдер и рендерер
-//        var collider = GetComponent<Collider>();
-//        if (collider != null) collider.enabled = false;
-
-//        var renderer = GetComponent<Renderer>();
-//        if (renderer != null) renderer.enabled = false;
-
-//        // Уничтожаем объект через 2 секунды (после проигрывания звука)
-//        Destroy(gameObject, 2f);
-//    }
-
-//    private void PlaySound(AudioClip clip)
-//    {
-//        if (clip != null && audioSource != null)
-//        {
-//            audioSource.PlayOneShot(clip);
-//        }
-//    }
-
-//    // Для восстановления здоровья (если нужно)
-//    public void Heal(int amount)
-//    {
-//        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-//    }
-//}
-
-
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
@@ -95,11 +17,13 @@ public class DoorHealth : MonoBehaviour
 
     [Header("Effects")]
     [SerializeField] private GameObject destructionEffect;
-    [SerializeField] private AudioClip hitSound;
-    [SerializeField] private AudioClip destroySound;
+    [SerializeField] private AudioSource hitSound;
+    [SerializeField] private AudioSource destroySound;
 
     private AudioSource audioSource;
     private bool isDead = false;
+    private float lastHitTime = -3f; // Инициализируем так, чтобы первый звук мог проиграться сразу
+    private const float HIT_SOUND_COOLDOWN = 3f; // Задержка между звуками ударов
 
     public float CurrentHealth => currentHealth;
     public bool IsDead => isDead;
@@ -121,7 +45,14 @@ public class DoorHealth : MonoBehaviour
 
         currentHealth = Mathf.Max(currentHealth - damage, 0f);
         onDamage?.Invoke();
-        PlaySound(hitSound);
+
+        // Проверяем, прошло ли достаточно времени с последнего звука удара
+        if (Time.time - lastHitTime >= HIT_SOUND_COOLDOWN)
+        {
+            hitSound.Play();
+            lastHitTime = Time.time;
+        }
+
         UpdateHologram();
 
         if (currentHealth <= 0)
@@ -134,7 +65,7 @@ public class DoorHealth : MonoBehaviour
     {
         isDead = true;
         onDeath?.Invoke();
-        PlaySound(destroySound);
+        destroySound.Play();
 
         if (destructionEffect != null)
         {
