@@ -4,19 +4,13 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class FootstepSystem : MonoBehaviour
 {
-    [Header("Audio Settings")]
+
     public AudioSource audioSource;
-    [Tooltip("Minimum movement speed to trigger footsteps")]
     public float minSpeed = 0.3f;
-    [Tooltip("Maximum pitch variation")]
     public float maxPitch = 1.2f;
-    [Tooltip("Delay before first footstep after movement starts")]
     public float startDelay = 0.2f;
-    [Tooltip("Layer mask for floor objects inside lab")]
     public LayerMask floorLayer;
-    [Tooltip("Height above floor to start checking")]
     public float checkHeight = 1.8f;
-    [Tooltip("Maximum distance to check for floor")]
     public float maxCheckDistance = 0.5f;
 
     private XROrigin xrOrigin;
@@ -70,7 +64,6 @@ public class FootstepSystem : MonoBehaviour
         }
         else
         {
-            // Дополнительная проверка - возможно игрок стоит на наклонной поверхности
             if (Physics.SphereCast(rayStart, 0.2f, Vector3.down, out hit, maxCheckDistance, floorLayer))
             {
                 isOnValidFloor = true;

@@ -13,7 +13,6 @@ public class EnemyDeathNotifier : MonoBehaviour
         }
     }
 
-    // Этот метод теперь можно вызывать вручную из других скриптов
     public void NotifyDeath()
     {
         OnEnemyDeath();

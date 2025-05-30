@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class HealthPickup : MonoBehaviour
 {
-    [Header("Настройки аптечки")]
     public float healAmount = 25f;
     public AudioClip healSound;
     public ParticleSystem healEffect;

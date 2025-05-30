@@ -129,7 +129,7 @@ public class EnemyStateManager : MonoBehaviour
     private void Start()
     {
         if (audioSource == null)
-            audioSource = GetComponent<AudioSource>(); // страховка
+            audioSource = GetComponent<AudioSource>(); 
 
         SwitchState(patrolState);
     }

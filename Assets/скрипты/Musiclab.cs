@@ -3,23 +3,19 @@ using System.Collections;
 
 public class ZoneMusicController : MonoBehaviour
 {
-    [Header("Audio Settings")]
     public AudioSource audioSource;
-    public AudioClip musicInsideZone; // Лаборатория
-    public AudioClip musicOutsideZone; // Космос
-    [Range(0.5f, 5f)] public float fadeDuration = 2f; // Длительность перехода
-
-    [Header("Volume Control")]
-    [Range(0f, 1f)] public float maxVolume = 1f; // Максимальная громкость
-    [Range(0f, 1f)] public float insideZoneVolume = 1f; // Громкость в лаборатории
-    [Range(0f, 1f)] public float outsideZoneVolume = 0.8f; // Громкость в космосе
+    public AudioClip musicInsideZone;  
+    public AudioClip musicOutsideZone;  
+    [Range(0.5f, 5f)] public float fadeDuration = 2f; 
+    [Range(0f, 1f)] public float maxVolume = 1f;   
+    [Range(0f, 1f)] public float insideZoneVolume = 1f;  
+    [Range(0f, 1f)] public float outsideZoneVolume = 0.8f; 
 
     private bool isInsideZone;
     private Coroutine currentFade;
 
     void Start()
     {
-        // Начинаем с музыки лаборатории
         audioSource.clip = musicInsideZone;
         audioSource.loop = true;
         audioSource.volume = insideZoneVolume * maxVolume;
@@ -63,7 +59,6 @@ public class ZoneMusicController : MonoBehaviour
         float timer = 0f;
         float startVolume = audioSource.volume;
 
-        // Фаза 1: Плавное уменьшение текущей музыки
         while (timer < fadeDuration)
         {
             audioSource.volume = Mathf.Lerp(startVolume, 0f, timer / fadeDuration);
@@ -71,11 +66,9 @@ public class ZoneMusicController : MonoBehaviour
             yield return null;
         }
 
-        // Переключаем трек
         audioSource.clip = newClip;
         audioSource.Play();
 
-        // Фаза 2: Плавное увеличение громкости нового трека
         timer = 0f;
         while (timer < fadeDuration)
         {
@@ -84,10 +77,9 @@ public class ZoneMusicController : MonoBehaviour
             yield return null;
         }
 
-        audioSource.volume = targetVolume; // Фиксируем конечную громкость
+        audioSource.volume = targetVolume;    
     }
 
-    // Метод для ручной настройки громкости из других скриптов
     public void SetMaxVolume(float volume)
     {
         maxVolume = Mathf.Clamp01(volume);

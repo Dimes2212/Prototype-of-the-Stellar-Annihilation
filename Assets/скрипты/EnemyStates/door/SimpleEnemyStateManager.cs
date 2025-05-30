@@ -10,16 +10,9 @@ public class SimpleEnemyStateManager : MonoBehaviour
     public DoorAgroState doorAgroState = new DoorAgroState();
     public DoorAttackState doorAttackState = new DoorAttackState();
     public DoorDeathState doorDeathState = new DoorDeathState();
-
-    [Header("Enemy2 Sound")]
-    
- 
     [SerializeField] private AudioSource enemyidleSound;
- 
-
     public Animator animator;
     public NavMeshAgent navMeshAgent;
-
     [SerializeField] private DoorHealth doorHealth;
     [SerializeField] private float _walkSpeed = 3.5f;
     [SerializeField] private float _attackDistance = 1.5f;
@@ -62,24 +55,7 @@ public class SimpleEnemyStateManager : MonoBehaviour
         currentState.OnEnter(this);
     
     }
-    //public void IdleSound()
-    //{
-    //    if (currentState == doorAgroState)
-    //    {
-    //        enemyidleSound.Play();
-
-    //    }
-    //}
-
-    //    public void AttackSound2()
-    //{
-    //    if (currentState == doorAttackState)
-    //    {
-    //        enemyAttackSound.Play();
-
-    //    }
-    //}
-
+    
     public void Die()
     {
         SwitchState(doorDeathState);

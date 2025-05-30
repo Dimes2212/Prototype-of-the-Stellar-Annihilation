@@ -4,27 +4,19 @@ using TMPro;
 
 public class DoorHealth : MonoBehaviour
 {
-    [Header("Health Settings")]
     public float maxHealth = 100f;
     private float currentHealth;
-
-    [Header("Events")]
     public UnityEvent onDamage;
     public UnityEvent onDeath;
-
-    [Header("UI")]
     public TextMeshProUGUI hologramText;
-
-    [Header("Effects")]
     [SerializeField] private GameObject destructionEffect;
     [SerializeField] private AudioSource hitSound;
     [SerializeField] private AudioSource destroySound;
 
     private AudioSource audioSource;
     private bool isDead = false;
-    private float lastHitTime = -3f; // Инициализируем так, чтобы первый звук мог проиграться сразу
-    private const float HIT_SOUND_COOLDOWN = 3f; // Задержка между звуками ударов
-
+    private float lastHitTime = -3f; 
+    private const float HIT_SOUND_COOLDOWN = 3f; 
     public float CurrentHealth => currentHealth;
     public bool IsDead => isDead;
 
@@ -46,7 +38,6 @@ public class DoorHealth : MonoBehaviour
         currentHealth = Mathf.Max(currentHealth - damage, 0f);
         onDamage?.Invoke();
 
-        // Проверяем, прошло ли достаточно времени с последнего звука удара
         if (Time.time - lastHitTime >= HIT_SOUND_COOLDOWN)
         {
             hitSound.Play();
@@ -72,7 +63,6 @@ public class DoorHealth : MonoBehaviour
             Instantiate(destructionEffect, transform.position, transform.rotation);
         }
 
-        // Отключаем визуальные компоненты и коллайдер
         var collider = GetComponent<Collider>();
         if (collider != null) collider.enabled = false;
 

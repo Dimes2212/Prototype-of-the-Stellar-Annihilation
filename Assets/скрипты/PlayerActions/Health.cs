@@ -196,32 +196,20 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
-    [Header("Health Settings")]
     public float maxHealth = 100f;
     private float currentHealth;
-
-    [Header("Events")]
     public UnityEvent onDamage;
     public UnityEvent onDeath;
-
-    [Header("UI")]
     public TextMeshProUGUI hologramText;
     public int rewardOnDeath = 0;
-
-    [Header("Player Settings")]
     [SerializeField] private EnemyZoneCleaner enemyZoneCleaner;
     [SerializeField] private Transform deathZonePoint;
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private GameObject deathMenuUI;
-
-    [Header("Player Sound")]
     [SerializeField] private AudioSource playerHurtSound;
     [SerializeField, Range(0f, 1f)] private float playerHurtVolume = 1f;
     [SerializeField] private AudioSource EnemyAttack;
     [SerializeField, Range(0f, 1f)] private float EnemyAttackVolume = 1f;
-
-
-    [Header("Enemy Sound")]
     [SerializeField] private AudioSource enemyHurtSound;
     [SerializeField] private AudioSource enemyDieSound;
     [SerializeField, Range(0f, 1f)] private float enemyHurtVolume = 1f;
@@ -242,7 +230,6 @@ public class Health : MonoBehaviour
         simpleEnemyStateManager = GetComponent<SimpleEnemyStateManager>();
         enemyStateManager = GetComponent<EnemyStateManager>();
 
-        // Настройка звуков
         if (playerHurtSound != null)
         {
             playerHurtSound.playOnAwake = false;
@@ -267,13 +254,11 @@ public class Health : MonoBehaviour
         onDamage?.Invoke();
         UpdateHologram();
 
-        // Воспроизведение звука урона для игрока
         if (isPlayer && playerHurtSound != null && EnemyAttack!=null)
         {
             EnemyAttack.Play();
             playerHurtSound.Play();
         }
-        // Воспроизведение звука урона для врагов
         else if (isEnemy && enemyHurtSound != null)
         {
             enemyHurtSound.Play();
@@ -283,7 +268,6 @@ public class Health : MonoBehaviour
             Die();
     }
 
-    // Методы для изменения громкости из инспектора
     public void SetPlayerHurtVolume(float volume)
     {
         playerHurtVolume = Mathf.Clamp01(volume);
