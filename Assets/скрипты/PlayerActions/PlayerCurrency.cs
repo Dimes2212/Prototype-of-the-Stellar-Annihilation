@@ -3,13 +3,16 @@ using TMPro;
 
 public class PlayerCurrency : MonoBehaviour
 {
-    public int startCurrency = 0;
+    private int startCurrency = 10000;
     public TextMeshProUGUI currencyText;
     [HideInInspector]
-    public int currentCurrency;
+    
+    private int currentCurrency;
+    
     void Awake()
     {
         currentCurrency = startCurrency;
+        
         UpdateUI();
     }
     public void AddCurrency(int amount)

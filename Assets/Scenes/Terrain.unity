@@ -3323,19 +3323,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 105317570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 105317572}
-        m_TargetAssemblyTypeName: TurretShopButton, Assembly-CSharp
-        m_MethodName: PurchaseTurret
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &105317570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5891,19 +5879,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 224217890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 224217892}
-        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
-        m_MethodName: PurchaseItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &224217890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9372,9 +9348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95643d17f8f54e2a99a5fc5777d0ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCurrency: 1000000
   currencyText: {fileID: 57086223}
-  currentCurrency: 0
 --- !u!1001 &340254018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10079,19 +10053,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 386118529}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 386118531}
-        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
-        m_MethodName: PurchaseItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &386118529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48355,19 +48317,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1415092957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1415092959}
-        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
-        m_MethodName: PurchaseItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1415092957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64651,19 +64601,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1840313409}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1840313411}
-        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
-        m_MethodName: PurchaseItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1840313409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68510,19 +68448,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1913434296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1913434298}
-        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
-        m_MethodName: PurchaseItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1913434296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72071,19 +71997,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2023857344}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2023857342}
-        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
-        m_MethodName: PurchaseItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2023857344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72347,9 +72261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95643d17f8f54e2a99a5fc5777d0ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCurrency: 100
   currencyText: {fileID: 57086223}
-  currentCurrency: 0
 --- !u!136 &2027501701
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -74544,19 +74456,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2118441728}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2118441726}
-        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
-        m_MethodName: PurchaseItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2118441728
 MonoBehaviour:
   m_ObjectHideFlags: 0

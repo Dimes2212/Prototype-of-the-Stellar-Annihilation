@@ -86,7 +86,6 @@ public class ShopButton : MonoBehaviour
 
     void Start()
     {
-        // Инициализация кнопки
         button = GetComponent<Button>();
         if (button == null)
         {
@@ -95,7 +94,6 @@ public class ShopButton : MonoBehaviour
             return;
         }
 
-        // Поиск PlayerCurrency
         playerCurrency = FindObjectOfType<PlayerCurrency>();
         if (playerCurrency == null)
         {
@@ -104,7 +102,6 @@ public class ShopButton : MonoBehaviour
             return;
         }
 
-        // Проверка ссылок
         if (itemPrefab == null || spawnPoint == null)
         {
             Debug.LogError("Не назначены itemPrefab или spawnPoint!", this);
@@ -112,20 +109,17 @@ public class ShopButton : MonoBehaviour
             return;
         }
 
-        // Подписка на событие
         button.onClick.AddListener(PurchaseItem);
     }
 
     public void PurchaseItem()
     {
-        // Проверка средств
-        if (playerCurrency.GetCurrency() < itemCost)
+        if (!playerCurrency.SpendMoney(itemCost))
         {
             Debug.Log("Недостаточно средств.");
             return;
         }
 
-        // Удаление старых предметов
         if (!string.IsNullOrEmpty(uniqueTag))
         {
             var existingItems = GameObject.FindGameObjectsWithTag(uniqueTag);
@@ -135,22 +129,20 @@ public class ShopButton : MonoBehaviour
             }
         }
 
-        // Спавн нового предмета
         try
         {
             Instantiate(itemPrefab, spawnPoint.position, spawnPoint.rotation);
-            playerCurrency.AddCurrency(-itemCost);
             Debug.Log($"Успешная покупка: {itemPrefab.name}");
         }
         catch (System.Exception e)
         {
             Debug.LogError($"Ошибка при покупке: {e.Message}");
+            playerCurrency.AddCurrency(itemCost);
         }
     }
 
     void OnDestroy()
     {
-        // Отписка от событий
         if (button != null)
             button.onClick.RemoveListener(PurchaseItem);
     }
