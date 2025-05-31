@@ -15,8 +15,8 @@ public class DoorHealth : MonoBehaviour
 
     private AudioSource audioSource;
     private bool isDead = false;
-    private float lastHitTime = -3f; 
-    private const float HIT_SOUND_COOLDOWN = 3f; 
+    private float lastHitTime = -2.5f; 
+    private const float HIT_SOUND_COOLDOWN = 2.5f; 
     public float CurrentHealth => currentHealth;
     public bool IsDead => isDead;
 
