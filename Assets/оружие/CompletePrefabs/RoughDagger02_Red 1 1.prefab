@@ -371,8 +371,10 @@ MonoBehaviour:
   targetTag: Enemy
   damageCooldown: 1
   weaponSound: {fileID: 6029970739367952830}
-  bloodEffectPrefab: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
+  bloodEffectPrefab: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
   effectDuration: 1
+  minRotation: {x: 0, y: 0, z: 0}
+  maxRotation: {x: 0, y: 360, z: 0}
 --- !u!82 &6029970739367952830
 AudioSource:
   m_ObjectHideFlags: 0

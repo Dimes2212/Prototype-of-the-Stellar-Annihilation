@@ -127,8 +127,10 @@ MonoBehaviour:
   targetTag: Enemy
   damageCooldown: 0.5
   weaponSound: {fileID: 5227121493740940094, guid: 06686364efd1143da8bd2237d06f25f8, type: 3}
-  bloodEffectPrefab: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
+  bloodEffectPrefab: {fileID: 3548588485384254792, guid: 048e2679d978607459a778d9ce6960c3, type: 3}
   effectDuration: 1
+  minRotation: {x: 0, y: 0, z: 0}
+  maxRotation: {x: 0, y: 360, z: 0}
 --- !u!114 &1388378873821987678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifetime: 5
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!54 &3353433924544633051
 Rigidbody:
   m_ObjectHideFlags: 0
