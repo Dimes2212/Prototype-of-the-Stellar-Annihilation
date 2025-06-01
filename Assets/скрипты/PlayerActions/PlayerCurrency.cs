@@ -3,7 +3,7 @@ using TMPro;
 
 public class PlayerCurrency : MonoBehaviour
 {
-    private int startCurrency = 10000;
+    private int startCurrency = 100;
     public TextMeshProUGUI currencyText;
     [HideInInspector]
     
