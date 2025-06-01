@@ -136,6 +136,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -211,6 +215,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -5565,15 +5573,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 115.8
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.848
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 194.8
+      value: 148.4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10273,7 +10281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 402.02
+      value: 398.6
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10281,7 +10289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 543.84
+      value: 462.3
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11614,6 +11622,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -11689,6 +11701,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -12516,6 +12532,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -12591,6 +12611,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -14531,15 +14555,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -127.91
+      value: -94.14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.76
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 116.24
+      value: 83.07
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15691,7 +15715,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 20
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -15742,7 +15766,7 @@ MonoBehaviour:
   animator: {fileID: 573899034}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 10
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 1773955642}
@@ -16360,11 +16384,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 991959006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &585776032 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-  m_PrefabInstance: {fileID: 747437052}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &589057878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21187,7 +21206,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 20
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -21238,7 +21257,7 @@ MonoBehaviour:
   animator: {fileID: 731704676}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 10
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 103687552}
@@ -21942,63 +21961,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &747437052
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1640477927}
-    m_Modifications:
-    - target: {fileID: 609111876570174516, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_Name
-      value: Office Chair Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 238.38805
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 92.30015
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 321.48413
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4480898967109445159, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e302621f2616c4042b0c4be3f63ea422, type: 3}
 --- !u!1001 &748924884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27420,7 +27382,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -27471,7 +27433,7 @@ MonoBehaviour:
   animator: {fileID: 930201929}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 747231701}
@@ -29108,6 +29070,10 @@ PrefabInstance:
       propertyPath: enemyDieSound
       value: 
       objectReference: {fileID: 524201935}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 237103570268318262, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: m_Name
       value: Skeletonzombie T Avelange@Orc Idle (2)
@@ -29160,6 +29126,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyidleSound
       value: 
@@ -30907,7 +30877,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -32466,7 +32436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340420185127758413, guid: d50a3e9b50b5f0f4b9c69fe84036a6ed, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2263
+      value: 1.9661268
       objectReference: {fileID: 0}
     - target: {fileID: 1340420185127758413, guid: d50a3e9b50b5f0f4b9c69fe84036a6ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32474,11 +32444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1340420185127758413, guid: d50a3e9b50b5f0f4b9c69fe84036a6ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 92.23865
+      value: 92.2386
       objectReference: {fileID: 0}
     - target: {fileID: 1340420185127758413, guid: d50a3e9b50b5f0f4b9c69fe84036a6ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 353.05
+      value: 352.6801
       objectReference: {fileID: 0}
     - target: {fileID: 1340420185127758413, guid: d50a3e9b50b5f0f4b9c69fe84036a6ed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33606,7 +33576,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -36478,7 +36448,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -36529,7 +36499,7 @@ MonoBehaviour:
   animator: {fileID: 1154727048}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 1173369813}
@@ -37379,6 +37349,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -37454,6 +37428,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -37827,6 +37805,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -37902,6 +37884,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -38568,6 +38554,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -38643,6 +38633,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -41501,6 +41495,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -41572,6 +41570,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -42055,7 +42057,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -42106,7 +42108,7 @@ MonoBehaviour:
   animator: {fileID: 1287516761}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 1364188573}
@@ -42648,6 +42650,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -42723,6 +42729,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -43538,7 +43548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fdf643b7e57fb9f498ade64169c21613, type: 3}
       propertyPath: m_LocalPosition.z
@@ -46815,7 +46825,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -46866,7 +46876,7 @@ MonoBehaviour:
   animator: {fileID: 1389173900}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 1135569318}
@@ -48410,6 +48420,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -48485,6 +48499,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -51939,7 +51957,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -51990,7 +52008,7 @@ MonoBehaviour:
   animator: {fileID: 1515829052}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 1985978907}
@@ -56220,7 +56238,6 @@ Transform:
   - {fileID: 1325658419}
   - {fileID: 947670983}
   - {fileID: 82957766}
-  - {fileID: 585776032}
   - {fileID: 10434337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56542,7 +56559,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -59685,7 +59702,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -59736,7 +59753,7 @@ MonoBehaviour:
   animator: {fileID: 1710014095}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 813443812}
@@ -61274,7 +61291,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -61325,7 +61342,7 @@ MonoBehaviour:
   animator: {fileID: 1739648005}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 432134605}
@@ -64922,6 +64939,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -64997,6 +65018,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -65807,7 +65832,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -65858,7 +65883,7 @@ MonoBehaviour:
   animator: {fileID: 1855499245}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 985561453}
@@ -67458,7 +67483,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -69419,7 +69444,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -69470,7 +69495,7 @@ MonoBehaviour:
   animator: {fileID: 1937470092}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 985561247}
@@ -70645,8 +70670,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.958198, y: 1.4892789, z: 0.5783985}
-  m_Center: {x: 2.9376113, y: -0.5158873, z: 2.2066586}
+  m_Size: {x: 12.662603, y: 1.4892789, z: 0.32}
+  m_Center: {x: 5.289814, y: -0.51588726, z: 2.2066586}
 --- !u!114 &1962610979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74961,6 +74986,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 524201935}
     - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: rewardOnDeath
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 97499816090473448, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: enemyHurtSound
       value: 
       objectReference: {fileID: 962915001}
@@ -75036,6 +75065,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2027501683}
+    - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
+      propertyPath: agroDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2354648952117005051, guid: b31f04e23b1a740f1b29ed433d54f6cf, type: 3}
       propertyPath: attackDistance
       value: 2.4
@@ -75819,7 +75852,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hologramText: {fileID: 0}
-  rewardOnDeath: 10
+  rewardOnDeath: 25
   enemyZoneCleaner: {fileID: 0}
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
@@ -75870,7 +75903,7 @@ MonoBehaviour:
   animator: {fileID: 2132241211}
   player: {fileID: 2027501683}
   walkSpeed: 2
-  agroDistance: 20
+  agroDistance: 30
   attackDistance: 2.3
   patrolPoints:
   - {fileID: 1885298501}
@@ -76568,7 +76601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 970303510967203854, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
       propertyPath: _attackDistance
-      value: 3.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 970303510967203854, guid: 371dcc8021bb744968ea7d1b5c8d919b, type: 3}
       propertyPath: enemyAttackSound

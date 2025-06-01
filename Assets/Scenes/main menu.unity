@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingSceneName: LoadingScene
   targetSceneName: Instraction
-  minLoadingDisplayTime: 3.68
+  minLoadingDisplayTime: 2
 --- !u!114 &42402228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,9 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95643d17f8f54e2a99a5fc5777d0ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCurrency: 100000
   currencyText: {fileID: 2028281174}
-  currentCurrency: 0
 --- !u!114 &244455526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,6 +995,13 @@ MonoBehaviour:
   deathZonePoint: {fileID: 0}
   respawnPoint: {fileID: 0}
   deathMenuUI: {fileID: 0}
+  playerHurtSound: {fileID: 0}
+  playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 1
+  enemyHurtSound: {fileID: 0}
+  enemyDieSound: {fileID: 0}
+  enemyHurtVolume: 1
 --- !u!1 &298110829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,9 +2970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95643d17f8f54e2a99a5fc5777d0ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCurrency: 1000000
   currencyText: {fileID: 2028281174}
-  currentCurrency: 0
 --- !u!1 &1430588353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3937,7 +3940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingSceneName: LoadingScene
   targetSceneName: Cutscene
-  minLoadingDisplayTime: 3.68
+  minLoadingDisplayTime: 2
 --- !u!1 &2028281173
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,6 +37,6 @@ public class CollectibleItem : MonoBehaviour
 
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 }

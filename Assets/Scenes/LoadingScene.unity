@@ -1902,7 +1902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1325995168
 Transform:
   m_ObjectHideFlags: 0
@@ -1989,9 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95643d17f8f54e2a99a5fc5777d0ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCurrency: 100000
   currencyText: {fileID: 1171678503}
-  currentCurrency: 0
 --- !u!114 &1383181279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,6 +2011,17 @@ MonoBehaviour:
       m_Calls: []
   hologramText: {fileID: 971157167}
   rewardOnDeath: 1
+  enemyZoneCleaner: {fileID: 0}
+  deathZonePoint: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  deathMenuUI: {fileID: 0}
+  playerHurtSound: {fileID: 0}
+  playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 1
+  enemyHurtSound: {fileID: 0}
+  enemyDieSound: {fileID: 0}
+  enemyHurtVolume: 1
 --- !u!1 &1432088581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,9 +2772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95643d17f8f54e2a99a5fc5777d0ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCurrency: 1000000
   currencyText: {fileID: 0}
-  currentCurrency: 0
 --- !u!1001 &1866109982
 PrefabInstance:
   m_ObjectHideFlags: 0
