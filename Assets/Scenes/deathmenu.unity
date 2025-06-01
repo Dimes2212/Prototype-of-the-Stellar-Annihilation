@@ -895,9 +895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95643d17f8f54e2a99a5fc5777d0ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCurrency: 100000
   currencyText: {fileID: 1167875203}
-  currentCurrency: 0
 --- !u!114 &474479293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,6 +917,17 @@ MonoBehaviour:
       m_Calls: []
   hologramText: {fileID: 1190528008}
   rewardOnDeath: 1
+  enemyZoneCleaner: {fileID: 0}
+  deathZonePoint: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  deathMenuUI: {fileID: 0}
+  playerHurtSound: {fileID: 0}
+  playerHurtVolume: 1
+  EnemyAttack: {fileID: 0}
+  EnemyAttackVolume: 1
+  enemyHurtSound: {fileID: 0}
+  enemyDieSound: {fileID: 0}
+  enemyHurtVolume: 1
 --- !u!1 &506736205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,74 +1136,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519100573}
   m_CullTransparentMesh: 1
---- !u!1001 &695534234
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5874.8496
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7752.491
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 674.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8850724
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.46545345
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -55.479
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_Name
-      value: XR Device Simulator
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1239298497}
-  m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
 --- !u!1 &725051251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,26 +1857,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233497378}
   m_CullTransparentMesh: 1
---- !u!1 &1239298496 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
-  m_PrefabInstance: {fileID: 695534234}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1239298497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239298496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c95643d17f8f54e2a99a5fc5777d0ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startCurrency: 1000000
-  currencyText: {fileID: 1167875203}
-  currentCurrency: 0
 --- !u!1 &1338576721
 GameObject:
   m_ObjectHideFlags: 0
@@ -4176,5 +4097,4 @@ SceneRoots:
   - {fileID: 2122238138}
   - {fileID: 1780165703}
   - {fileID: 898935432}
-  - {fileID: 695534234}
   - {fileID: 1434265055}
